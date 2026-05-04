@@ -24,28 +24,16 @@
     </header>
 
     <main>
-        <section class="py-16 px-6">
+        <section>
             <h2 class="text-center text-4xl mb-10 font-bold text-red-600 uppercase font-oswald">Start Your Subscription</h2>
             
-            <!-- Pricing Recap -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
-                <div class="price-tag"><h3>P500</h3><p>5 Days/Week</p></div>
-                <div class="price-tag"><h3>P550</h3><p>6 Days/Week</p></div>
-                <div class="price-tag"><h3>P600</h3><p>7 Days/Week</p></div>
-            </div>
-
             <div class="form-container">
                 <form id="subForm">
-                    <div class="form-row">
-                        <div>
-                            <label>First Name</label>
-                            <input type="text" placeholder="First Name" required>
-                        </div>
-                        <div>
-                            <label>Surname</label>
-                            <input type="text" placeholder="Surname" required>
-                        </div>
-                    </div>
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" required>
+                    
+                    <label>Surname</label>
+                    <input type="text" placeholder="Surname" required>
                     
                     <label>Student ID Number</label>
                     <input type="text" placeholder="e.g. 202400123" required>
@@ -70,16 +58,17 @@
                     <label>Payment Method</label>
                     <select required>
                         <option value="">Select Payment Method</option>
-                        <option value="FNBB">FNBB Transfer</option>
+                        <option value="FNBB">FNBB</option>
                         <option value="Orange Money">Orange Money</option>
-                        <option value="Cash">Cash on Delivery</option>
+                        <option value="Cash on Delivery">Cash on Delivery</option>
+                        <option value="ABSA">ABSA</option>
                     </select>
                     
                     <label>Campus / Delivery Location</label>
-                    <input type="text" placeholder="e.g. UB Block 230" required>
+                    <input type="text" placeholder="Specific campus location or building" required>
                     
                     <label>Special Requests (Allergies)</label>
-                    <textarea rows="3" placeholder="Any allergies or dietary needs?"></textarea>
+                    <textarea rows="3" placeholder="Let us know about allergies or dietary restrictions..."></textarea>
                     
                     <button type="submit" class="cta-button w-full">Submit Request</button>
                 </form>
