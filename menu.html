@@ -4,91 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Skeif Botsogo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-zinc-900 text-white font-sans">
-    <header class="bg-black py-4 px-6 border-b-2 border-red-600">
-        <nav class="flex justify-between items-center max-w-6xl mx-auto">
-            <div class="flex items-center gap-4">
-                <img src="logo.jpeg" alt="Skeif Botsogo Logo" class="h-12 w-auto rounded">
-                <div class="text-3xl font-bold text-red-600 tracking-tighter font-oswald uppercase">SKEIF BOTSOGO</div>
+<body class="bg-zinc-900 text-white">
+    <header class="p-3 bg-black border-bottom border-danger">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <img src="logo.jpeg" alt="Logo" style="height: 40px;">
+                <span class="h3 mb-0 text-danger fw-bold">SKEIF BOTSOGO</span>
             </div>
-            <ul class="flex gap-6 font-semibold uppercase text-sm">
-                <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
-                <li><a href="menu.html" class="text-red-500 underline decoration-2 offset-4">Menu</a></li>
-                <li><a href="subscribe.html" class="hover:text-red-500 transition">Subscribe</a></li>
-                <li><a href="faq.html" class="hover:text-red-500 transition">FAQ</a></li>
-                <li><a href="contact.html" class="hover:text-red-500 transition">Contact</a></li>
-            </ul>
-        </nav>
+            <nav class="nav">
+                <a class="nav-link text-white" href="index.html">Home</a>
+                <a class="nav-link text-danger fw-bold" href="menu.html">Menu</a>
+                <a class="nav-link text-white" href="subscribe.html">Subscribe</a>
+                <a class="nav-link text-white" href="faq.html">FAQ</a>
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 pb-20">
-        <h2 class="text-center text-5xl font-bold py-16 text-red-600 uppercase font-oswald tracking-widest">Weekly Meals</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="bg-zinc-800 p-4 rounded-xl border border-zinc-700 hover:border-red-600 transition group">
-                <img src="monday.jpg" alt="Monday Meal" class="w-full h-64 object-cover rounded-lg mb-4 group-hover:scale-105 transition duration-300">
-                <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2 mb-2">Monday</h3>
-                <p class="text-zinc-300">Pap, Seswaa and Morogo</p>
-            </div>
-
-            <div class="bg-zinc-800 p-4 rounded-xl border border-zinc-700 hover:border-red-600 transition group">
-                <img src="tuesday.jpg" alt="Tuesday Meal" class="w-full h-64 object-cover rounded-lg mb-4 group-hover:scale-105 transition duration-300">
-                <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2 mb-2">Tuesday</h3>
-                <p class="text-zinc-300">Rice, Chicken, Coleslaw and Chakalaka</p>
-            </div>
-
-            <div class="bg-zinc-800 p-4 rounded-xl border-2 border-dashed border-red-900/50 flex flex-col justify-center items-center text-center">
-                <div class="bg-red-600/10 p-6 rounded-full mb-4">
-                    <i class="fa-solid fa-utensils text-4xl text-red-600"></i>
+    <main class="container py-5">
+        <h2 class="text-center display-4 fw-bold text-danger mb-5">WEEKLY MENU</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-secondary h-100">
+                    <img src="monday.jpg" class="card-img-top" alt="Monday">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Monday</h5>
+                        <p class="card-text">Pap, Seswaa and Morogo</p>
+                    </div>
                 </div>
-                <h3 class="text-red-500 font-oswald text-xl uppercase mb-2">Wednesday</h3>
-                <p class="text-zinc-400 italic">Customer's Choice Day!</p>
             </div>
-
-            <div class="bg-zinc-800 p-4 rounded-xl border border-zinc-700 hover:border-red-600 transition group">
-                <img src="thursday.jpg" alt="Thursday Meal" class="w-full h-64 object-cover rounded-lg mb-4 group-hover:scale-105 transition duration-300">
-                <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2 mb-2">Thursday</h3>
-                <p class="text-zinc-300">Madombi and Beef Stew</p>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-secondary h-100">
+                    <img src="tuesday.jpg" class="card-img-top" alt="Tuesday">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Tuesday</h5>
+                        <p class="card-text">Rice, Chicken and Chakalaka</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="bg-zinc-800 p-4 rounded-xl border border-zinc-700 hover:border-red-600 transition group">
-                <img src="friday.jpg" alt="Friday Meal" class="w-full h-64 object-cover rounded-lg mb-4 group-hover:scale-105 transition duration-300">
-                <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2 mb-2">Friday</h3>
-                <p class="text-zinc-300">Chicken Salad with Grilled Chicken and Penne Pasta</p>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-secondary h-100">
+                    <img src="friday.jpg" class="card-img-top" alt="Friday">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Friday</h5>
+                        <p class="card-text">Chicken Salad & Penne Pasta</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="bg-zinc-800 p-4 rounded-xl border border-zinc-700 hover:border-red-600 transition group">
-                <img src="saturday.jpg" alt="Saturday Meal" class="w-full h-64 object-cover rounded-lg mb-4 group-hover:scale-105 transition duration-300">
-                <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2 mb-2">Saturday</h3>
-                <p class="text-zinc-300">Samp, Beetroot, Coleslaw and Beef Stew</p>
-            </div>
-
-            <div class="bg-zinc-800 p-4 rounded-xl border border-zinc-700 hover:border-red-600 transition group">
-                <img src="sunday.jpg" alt="Sunday Meal" class="w-full h-64 object-cover rounded-lg mb-4 group-hover:scale-105 transition duration-300">
-                <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2 mb-2">Sunday</h3>
-                <p class="text-zinc-300">Madombi, Chicken, Coleslaw and Chakalaka</p>
-            </div>
-
-        </div>
-
-        <div class="mt-20 text-center">
-            <a href="subscribe.html" class="inline-block bg-red-600 text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-700 transition transform hover:scale-105">
-                Ready to Eat? Subscribe Now
-            </a>
         </div>
     </main>
-
-    <footer class="bg-black py-10 border-t border-zinc-800 text-center text-zinc-500 text-sm">
-        <p class="mb-2">© 2026 SKEIF BOTSOGO | FEEDING MINDS</p>
-        <p>GABORONE, BOTSWANA</p>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
