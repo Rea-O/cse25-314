@@ -1,14 +1,95 @@
-<!-- Inside subscribe.html -->
-<main>
-    <section class="py-16 px-6">
-        <h2 class="text-center text-4xl mb-10 font-bold text-red-600 uppercase">Start Your Subscription</h2>
-        <div class="form-container">
-            <form id="subForm">
-                <label>First Name</label>
-                <input type="text" placeholder="First Name" required>
-                <!-- ... add the rest of the form fields here ... -->
-                <button type="submit" class="cta-button w-full">Submit Request</button>
-            </form>
-        </div>
-    </section>
-</main>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - Skeif Botsogo</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-font">SKEIF BOTSOGO</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="subscribe.html" class="active">Subscribe</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-16 px-6">
+            <h2 class="text-center text-4xl mb-10 font-bold text-red-600 uppercase font-oswald">Start Your Subscription</h2>
+            
+            <!-- Pricing Recap -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
+                <div class="price-tag"><h3>P500</h3><p>5 Days/Week</p></div>
+                <div class="price-tag"><h3>P550</h3><p>6 Days/Week</p></div>
+                <div class="price-tag"><h3>P600</h3><p>7 Days/Week</p></div>
+            </div>
+
+            <div class="form-container">
+                <form id="subForm">
+                    <div class="form-row">
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" placeholder="First Name" required>
+                        </div>
+                        <div>
+                            <label>Surname</label>
+                            <input type="text" placeholder="Surname" required>
+                        </div>
+                    </div>
+                    
+                    <label>Student ID Number</label>
+                    <input type="text" placeholder="e.g. 202400123" required>
+                    
+                    <label>Institution</label>
+                    <select required>
+                        <option value="">Select Your Institution</option>
+                        <option value="UB">University of Botswana (UB)</option>
+                        <option value="BAC">Botswana Accountancy College (BAC)</option>
+                        <option value="IDM">Institute of Development Management (IDM)</option>
+                    </select>
+                    
+                    <label>Preferred Plan</label>
+                    <select required>
+                        <option value="">Select Your Plan</option>
+                        <option>5 Days / Week (P500)</option>
+                        <option>6 Days / Week (P550)</option>
+                        <option>7 Days / Week (P600)</option>
+                        <option>Daily Plate (P30)</option>
+                    </select>
+
+                    <label>Payment Method</label>
+                    <select required>
+                        <option value="">Select Payment Method</option>
+                        <option value="FNBB">FNBB Transfer</option>
+                        <option value="Orange Money">Orange Money</option>
+                        <option value="Cash">Cash on Delivery</option>
+                    </select>
+                    
+                    <label>Campus / Delivery Location</label>
+                    <input type="text" placeholder="e.g. UB Block 230" required>
+                    
+                    <label>Special Requests (Allergies)</label>
+                    <textarea rows="3" placeholder="Any allergies or dietary needs?"></textarea>
+                    
+                    <button type="submit" class="cta-button w-full">Submit Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 SKEIF BOTSOGO | GABORONE, BOTSWANA</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
