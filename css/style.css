@@ -1,5 +1,4 @@
-/* 1. Global Reset & Theme */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,13 +6,12 @@
 }
 
 body {
-    background-color: #1a1a1a; /* Dark background from image */
+    background-color: #1a1a1a;
     color: #ffffff;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents horizontal white space/scrolling */
+    overflow-x: hidden;
 }
 
-/* 2. Navigation Bar (Home, Menu, Subscribe, FAQ, Contact) */
 header {
     background-color: #111;
     padding: 1rem 5%;
@@ -48,7 +46,6 @@ nav ul li a:hover {
     color: #ff4500; /* Matching the orange button color */
 }
 
-/* 3. Question Form Section (As seen in image) */
 .contact-container {
     max-width: 800px;
     margin: 50px auto;
@@ -92,7 +89,7 @@ textarea {
     background-color: #2a2a2a;
     border: 1px solid #555;
     border-radius: 5px;
-    color: white;
+    color: grey;
     font-size: 1rem;
     outline: none;
 }
@@ -107,7 +104,6 @@ textarea {
     resize: vertical;
 }
 
-/* 5. The Submit Button */
 .submit-btn {
     width: 100%;
     padding: 15px;
@@ -126,7 +122,6 @@ textarea {
     background-color: #e63e00;
 }
 
-/* 6. Fix for White Space at bottom */
 footer {
     padding: 20px;
     text-align: center;
