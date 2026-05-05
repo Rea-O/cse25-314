@@ -80,3 +80,24 @@ nav ul li a {
     font-size: 24px;
   }
 }
+input[type="email"], 
+textarea,
+input[type="email"]:focus, 
+textarea:focus {
+    background-color: #18181b ;
+    color: #ffffff ;
+    border: 1px solid #555; 
+    outline: none; 
+    box-shadow: none;  
+}
+
+textarea {
+    min-height: 150px;
+    background-color: #18181b ;
+    color: #ffffff ;
+}
+
+input, textarea, select {
+    color: #ffffff ;
+    background-color: #18181b ;
+}
