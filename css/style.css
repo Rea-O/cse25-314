@@ -1,22 +1,26 @@
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: #1a1a1a;
     color: #ffffff;
     line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 100vw;
     overflow-x: hidden;
 }
+
+.font-oswald { font-family: 'Oswald', sans-serif; }
 
 header {
     background-color: #111;
     padding: 1rem 5%;
     border-bottom: 1px solid #333;
     display: flex;
+    flex-wrap: wrap; 
     justify-content: space-between;
     align-items: center;
     position: sticky;
@@ -26,82 +30,53 @@ header {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
+    gap: 15px;
 }
 
 nav ul li a {
     color: #eee;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #ff4500; 
-}
+nav ul li a:hover { color: #ff4500; }
 
 .contact-container {
     max-width: 800px;
-    margin: 50px auto;
-    padding: 40px;
+    margin: 30px auto;
+    padding: 20px;
     background-color: #222;
     border: 1px solid #444;
     border-radius: 8px;
-    text-align: left;
-}
-
-h2.section-title {
-    color: #ff4500; 
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #bbb;
-    margin-bottom: 30px;
-}
-
-/* 4. Form Inputs */
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    color: #ff4500;
-    font-weight: bold;
-    margin-bottom: 8px;
 }
 
 input[type="email"], 
+input[type="text"],
+select, 
 textarea {
     width: 100%;
     padding: 12px;
-    background-color: #2a2a2a;
+    background-color: #18181b ;
     border: 1px solid #555;
     border-radius: 5px;
-    color: grey;
+    color: #ffffff ; 
     font-size: 1rem;
     outline: none;
+    caret-color: #ff4500;
 }
 
-input[type="email"]:focus, 
-textarea:focus {
-    border-color: #ff4500;
+input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff ;
+    -webkit-box-shadow: 0 0 0px 1000px #18181b inset ;
 }
 
-textarea {
-    min-height: 150px;
-    resize: vertical;
+::placeholder {
+    color: #71717a;
 }
 
 .submit-btn {
@@ -114,13 +89,10 @@ textarea {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    font-size: 1rem;
     transition: background 0.3s ease;
 }
 
-.submit-btn:hover {
-    background-color: #e63e00;
-}
+.submit-btn:hover { background-color: #e63e00; }
 
 footer {
     padding: 20px;
@@ -128,32 +100,4 @@ footer {
     font-size: 0.8rem;
     color: #666;
     background: #111;
-}
-html, body {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-
-.font-oswald { font-family: 'Oswald', sans-serif; }
-
-input, select, textarea {
-    color: #ffffff ;
-    background-color: #18181b ; 
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus {
-    -webkit-text-fill-color: #ffffff ;
-    -webkit-box-shadow: 0 0 0px 1000px #18181b inset ;
-    transition: background-color 5000s ease-in-out 0s;
-}
-
-input {
-    caret-color: #ef4444 ;
-}
-
-::placeholder {
-    color: #71717a ;
-    opacity: 1;
 }
