@@ -47,7 +47,6 @@ nav ul li a {
   font-size: 16px;
 }
 
-/* --- WHATSAPP BUTTON --- */
 .whatsapp-btn {
   display: inline-block;
   background-color: #8B0000;
@@ -80,26 +79,43 @@ nav ul li a {
     font-size: 24px;
   }
 }
+
+input[type="text"], 
 input[type="email"], 
-textarea,
+textarea, 
+select {
+    background-color: #18181b ;
+    color: #ffffff ;
+    border: 1px solid #444;  
+    padding: 12px;
+    border-radius: 5px;
+    outline: none; 
+}
+
+input[type="text"]:focus, 
 input[type="email"]:focus, 
 textarea:focus {
     background-color: #18181b ;
     color: #ffffff ;
-    border: 1px solid #555; 
-    outline: none; 
-    box-shadow: none;  
+    border-color: #ff4500;    
 }
 
 textarea {
     min-height: 150px;
-    background-color: #18181b ;
-    color: #ffffff ;
+    resize: vertical;
 }
 
-input, textarea, select {
-    color: #ffffff ;
-    background-color: #18181b ;
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #18181b inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+    color: #71717a !important;
+    opacity: 0.8;
 }
 
 .hero-section {
