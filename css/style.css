@@ -1,228 +1,136 @@
-:root {
-  --primary-red: #c62828;
-  --accent-red: #8e1b1b;
-  --chalk-bg: #1a1a1a;
-  --text-white: #ffffff;
+/* 1. Global Reset & Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: var(--chalk-bg);
-  background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
-  font-family: 'Segoe UI', sans-serif;
-  color: var(--text-white);
-  overflow-x: hidden;
-  line-height: 1.6;
+    background-color: #1a1a1a; /* Dark background from image */
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents horizontal white space/scrolling */
 }
 
+/* 2. Navigation Bar (Home, Menu, Subscribe, FAQ, Contact) */
 header {
-  background-color: #000;
-  border-bottom: 5px solid var(--primary-red);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-}
-
-.logo-font {
-  font-family: 'Oswald', sans-serif;
-  font-size: 28px;
-  text-transform: uppercase;
-  color: var(--primary-red);
-  letter-spacing: 1px;
-}
-
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav a { 
-  color: #ccc; 
-  text-decoration: none; 
-  font-weight: 600; 
-  font-size: 14px; 
-  text-transform: uppercase;
-  transition: 0.3s;
-}
-nav a:hover, nav a.active { color: var(--primary-red); }
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80');
-  background-size: cover;
-  background-position: center;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(32px, 8vw, 64px);
-  color: var(--primary-red);
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.cta-button {
-  background-color: var(--primary-red);
-  color: white;
-  padding: 12px 30px;
-  font-weight: 700;
-  border-radius: 5px;
-  text-transform: uppercase;
-  margin-top: 20px;
-  transition: 0.3s;
-  cursor: pointer;
-  border: none;
-  display: inline-block;
-  text-decoration: none;
-}
-.cta-button:hover { background-color: var(--accent-red); transform: scale(1.05); }
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.day-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-  text-align: center;
-}
-
-.day-header {
-  font-family: 'Oswald', sans-serif;
-  font-size: 24px;
-  color: var(--primary-red);
-  margin-bottom: 15px;
-  border-bottom: 2px solid var(--primary-red);
-  display: inline-block;
-  padding: 0 10px;
-}
-
-.meal-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  border: 3px solid #333;
-}
-
-.price-tag-container {
+    background-color: #111;
+    padding: 1rem 5%;
+    border-bottom: 1px solid #333;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px auto;
-    max-width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.price-tag {
-  background: var(--primary-red);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  flex: 1;
-  min-width: 200px;
+nav ul {
+    display: flex;
+    list-style: none;
 }
 
-.form-container {
-  background: #222;
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 650px;
-  margin: 0 auto;
-  border: 1px solid var(--primary-red);
+nav ul li {
+    margin-left: 25px;
 }
 
-.form-container label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
+nav ul li a {
     color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  background: #333;
-  border: 1px solid #444;
-  color: white;
-  border-radius: 5px;
-  display: block;
+nav ul li a:hover {
+    color: #ff4500; /* Matching the orange button color */
 }
 
+/* 3. Question Form Section (As seen in image) */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    text-align: left;
+}
+
+h2.section-title {
+    color: #ff4500; /* Darker orange from image */
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+/* 4. Form Inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: #ff4500;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+input[type="email"]:focus, 
+textarea:focus {
+    border-color: #ff4500;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* 5. The Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e63e00;
+}
+
+/* 6. Fix for White Space at bottom */
 footer {
-  background: #000;
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 5px solid var(--primary-red);
-  margin-top: 50px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.social-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-}
-
-.social-item i {
-  font-size: 28px;
-  color: var(--primary-red);
-}
-input, select, textarea {
-    color: white ;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus {
-    -webkit-text-fill-color: white ;
-    -webkit-box-shadow: 0 0 0px 1000px #18181b inset; 
-    transition: background-color 5000s ease-in-out 0s;
-}
-/* Prevent horizontal overflow on mobile devices */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Make images responsive */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Adjust Hero text for small screens */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3rem ; 
-    }
-    .hero {
-        padding: 60px 20px ;
-    }
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    background: #111;
 }
