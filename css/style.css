@@ -43,7 +43,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff4500; /* Matching the orange button color */
+    color: #ff4500; 
 }
 
 .contact-container {
@@ -57,7 +57,7 @@ nav ul li a:hover {
 }
 
 h2.section-title {
-    color: #ff4500; /* Darker orange from image */
+    color: #ff4500; 
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -135,3 +135,25 @@ html, body {
 }
 
 .font-oswald { font-family: 'Oswald', sans-serif; }
+
+input, select, textarea {
+    color: #ffffff ;
+    background-color: #18181b ; 
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff ;
+    -webkit-box-shadow: 0 0 0px 1000px #18181b inset ;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+    caret-color: #ef4444 ;
+}
+
+::placeholder {
+    color: #71717a ;
+    opacity: 1;
+}
