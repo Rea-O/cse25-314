@@ -142,36 +142,71 @@ body {
 .border-red {
     border: 1px solid #dc3545 !important;
 }
-
 /* ==========================================================================
-   5. GLOBAL FORM SETTINGS (FIXED BLACK FIELDS FOR FAQ & SUBSCRIBE)
+   5. GLOBAL FORM SETTINGS (HIGH-VISIBILITY BLACK FIELDS FOR FAQ & SUBSCRIBE)
    ========================================================================== */
-/* Forcing inputs, selections and textareas to use a unified theme across the site */
 textarea,
 input[type="text"], 
 input[type="email"],
 select {
     width: 100% !important;
     max-width: 100% !important;
-    background-color: #000000 !important; /* Pure black field inputs matching layouts */
-    color: #ffffff !important;            /* High visibility typing text color values */
-    border: 1px solid #3f3f46 !important;
+    background-color: #000000 !important; /* Pure black field background */
+    
+    /* CRITICAL VISIBILITY FIX: Bright white text for maximum readability when typing */
+    color: #ffffff !important;            
+    
+    border: 1px solid #3f3f46 !important; /* Muted zinc border matching your theme panels */
     border-radius: 8px !important;
     padding: 12px 16px !important;
     font-size: 16px !important;
     outline: none !important;
-    box-sizing: border-box !important;   /* Safeguards fields against extending past screens */
+    box-sizing: border-box !important;   
 }
 
-/* FIXED TEXTAREAS: Locks box bounds completely on laptops and mobile devices */
+/* FIXED TEXTAREAS: Locks box dimensions for both desktop and mobile screens */
 textarea {
     height: 140px !important;
     min-height: 140px !important;
     max-height: 140px !important;
-    resize: none !important;              /* Completely hides and disables drag handle window hooks */
+    resize: none !important;              
 }
 
+/* Enhances field borders to your bright signature red when clicked/active */
 textarea:focus,
 input:focus,
 select:focus {
+    border-color: #dc3545 !important;    
+    box-shadow: 0 0 8px rgba(220, 53, 69, 0.35) !important;
+}
+
+/* CRITICAL PLACEHOLDER VISIBILITY FIX: Forces browser engines to display clear, legible hints */
+textarea::placeholder,
+input::placeholder {
+    color: #a1a1aa !important;   /* Crisp, light gray placeholder text (Zinc-400 color level) */
+    opacity: 1 !important;        /* Prevents browsers from making it too transparent to read */
+}
+
+/* Internet Explorer specific placeholder rules */
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+    color: #a1a1aa !important;
+}
+
+/* Microsoft Edge specific placeholder rules */
+textarea::-ms-input-placeholder,
+input::-ms-input-placeholder {
+    color: #a1a1aa !important;
+}
+
+/* Custom internal style mechanics to fix select dropdown option visibility */
+select option {
+    background-color: #18181b !important;
+    color: #ffffff !important;
+}
+
+/* Custom internal style mechanics to fix default white radio item bubbles */
+input[type="radio"] {
+    accent-color: #dc3545 !important;
+}
     border-color: #dc3545 !important;    /* Sleek red boundary highlight on focus
