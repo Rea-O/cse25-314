@@ -28,20 +28,21 @@ body {
 .text-red-accent {
     color: #dc3545;
 }
-
 /* ==========================================================================
-   2. GLOBAL NAVIGATION HEADER (MOBILE VERTICAL STACK BY DEFAULT)
+   2. GLOBAL NAVIGATION HEADER (STAYS VERTICAL ON ALL SCREENS)
    ========================================================================== */
-/* Mobile View First: Elements stack vertically in a clean line */
+/* The main navbar wrapper */
 .custom-navbar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-width: 1140px;
+    flex-direction: column; /* FORCES VERTICAL STACKING EVERYWHERE */
+    align-items: center;    /* Centered layout by default for mobile screens */
+    gap: 20px;
     width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
+/* Brand Identity Group (Logo badge elements) */
 .nav-brand-group {
     display: flex;
     flex-direction: column; /* Logo sits directly above text on small screens */
@@ -50,7 +51,7 @@ body {
 }
 
 .brand-logo-img {
-    height: 48px; /* Clean, recognizable sizing for your brand logo icon */
+    height: 48px;
     width: auto;
 }
 
@@ -62,10 +63,11 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* The Navigation Links Container */
 .nav-links-menu {
     display: flex;
-    flex-direction: column; /* FORCES LINKS TO STACK VERTICALLY ON PHONES */
-    align-items: center;
+    flex-direction: column; /* FORCES LINKS VERTICAL ON ALL DEVICES */
+    align-items: center;    /* Centered underneath logo on phones */
     list-style: none;
     gap: 12px;
     width: 100%;
@@ -82,6 +84,7 @@ body {
     transition: color 0.2s ease;
     padding: 4px 8px;
     display: block;
+    text-align: center;
 }
 
 .nav-link-item:hover {
@@ -96,8 +99,35 @@ body {
     text-decoration-thickness: 2px;
 }
 
+
 /* ==========================================================================
-   3. HERO BANNER WITH DIMMED LOW-LIGHT IMAGING OVERLAY
+   3. WIDESCREEN COMPUTER MEDIA QUERIES (DESKTOP MODE POSITIONING)
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+    /* Shifts the entire header content structure sideways on PCs */
+    .custom-navbar {
+        align-items: flex-start !important; /* Pulls the entire group to the left side */
+        padding-left: 20px;
+    }
+
+    .nav-brand-group {
+        flex-direction: row; /* Returns logo side-by-side with brand name on PC only */
+        align-items: center;
+    }
+
+    /* Keeps links stacked running down vertically, but shifts them left aligned under the brand */
+    .nav-links-menu {
+        align-items: flex-start !important; /* Left aligns link text lines instead of centering */
+        padding-left: 56px;                  /* Indents links slightly so they line up neatly with text */
+        width: auto;
+    }
+
+    .nav-link-item {
+        text-align: left !important;
+    }
+}
+/* ==========================================================================
+   4. HERO BANNER WITH DIMMED LOW-LIGHT IMAGING OVERLAY
    ========================================================================== */
 .hero-section {
     position: relative;
@@ -132,7 +162,7 @@ body {
 }
 
 /* ==========================================================================
-   4. CONTENT LAYOUT BLOCKS & SUBSCRIPTION PRICING CARDS
+   5. CONTENT LAYOUT BLOCKS & SUBSCRIPTION PRICING CARDS
    ========================================================================== */
 .card-custom {
     background-color: #27272a; /* Solid dark container card style background color */
@@ -143,7 +173,7 @@ body {
     border: 1px solid #dc3545 !important;
 }
 /* ==========================================================================
-   5. GLOBAL FORM SETTINGS (HIGH-VISIBILITY BLACK FIELDS FOR FAQ & SUBSCRIBE)
+   6. GLOBAL FORM SETTINGS (HIGH-VISIBILITY BLACK FIELDS FOR FAQ & SUBSCRIBE)
    ========================================================================== */
 textarea,
 input[type="text"], 
