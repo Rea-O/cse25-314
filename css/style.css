@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CORE CUSTOM STYLES & LAYOUTS
+   1. GLOBAL REUSABLE FORMATS
    ========================================================================== */
 .font-oswald {
     font-family: 'Oswald', sans-serif;
@@ -19,9 +19,6 @@
 .text-red-accent {
     color: #ff4500;
 }
-.max-w-6xl {
-    max-width: 1140px;
-}
 .max-w-form {
     max-width: 500px;
 }
@@ -32,17 +29,42 @@
 .text-logo {
     font-size: 1.75rem;
     font-weight: bold;
-    color: #dc3545;
+    color: #ff4500;
     letter-spacing: 1px;
 }
 
 /* ==========================================================================
-   2. VERTICAL NAVIGATION LINKS
+   2. MOBILE-FIRST NAVIGATION STACK (Matches your phone screens)
    ========================================================================== */
+.custom-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.nav-logo-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links-list {
+    display: flex;
+    flex-direction: column; /* Forces vertical order stack layout default */
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    width: 100%;
+}
+
 .nav-link-item {
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
+    font-weight: bold;
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
     padding: 4px 8px;
@@ -52,13 +74,14 @@
     color: #ff4500;
 }
 .active-link {
-    color: #ff4500;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    color: #ff4500 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
 }
 
 /* ==========================================================================
-   3. HERO BANNER WITH TINTED PHOTO TONE
+   3. HERO BANNER STYLE (With 75% Dark Low-Lighting Filter Overlay)
    ========================================================================== */
 .hero-section {
     position: relative;
@@ -67,69 +90,68 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Layers a low-lighting tint overlay across your background food picture asset */
+    /* Mixes dark layer matrix over the top of the background image configuration asset */
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-                url('background.jpg') center/cover no-repeat;
+                url('../background.jpg') center/cover no-repeat;
 }
 .hero-title {
-    font-size: 3.75rem;
+    font-size: 4rem;
     font-weight: 900;
-    color: #ff4500;
+    color: #ffffff;
     letter-spacing: 2px;
     margin-bottom: 12px;
 }
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: #ffffff;
+    font-size: 1.35rem;
+    color: #cccccc;
     max-width: 650px;
     margin: 0 auto 30px auto;
 }
 
 /* ==========================================================================
-   4. SECTIONS & PRICING CARDS
+   4. CONTENT BLOCKS & PRICING
    ========================================================================== */
 .card-custom {
-    background-color: #212529; /* Matches body dark layout block background tint */
-    border: 1px solid #2c3034;
+    background-color: #1a1a1a;
+    border: 1px solid #2d2d2d;
 }
 .border-red {
     border: 1px solid #dc3545 !important;
 }
 
 /* ==========================================================================
-   5. GLOBAL FORM SETTINGS (LOCKED SIZES FOR PC AND SMARTPHONES)
+   5. FIELDS & LOCKED TEXTAREAS (Theme matching black background, white text)
    ========================================================================== */
-input[type="text"], 
-input[type="email"], 
-textarea {
+.custom-field-input,
+.custom-field-textarea {
     width: 100% !important;
     max-width: 100% !important;
-    background-color: #000000 !important; /* True black entry background */
-    color: #ffffff !important;            /* Pure white typing text values */
-    border: 1px solid #343a40 !important;
+    background-color: #000000 !important; /* Pure black fill layer background */
+    color: #ffffff !important;            /* High visibility pure white font character line color */
+    border: 1px solid #333333 !important;
     border-radius: 6px !important;
     padding: 12px 16px !important;
     font-size: 16px !important;
     outline: none !important;
-    box-sizing: border-box !important;    /* Forces inputs to share uniform boundaries */
+    box-sizing: border-box !important;
 }
 
-/* FIXED: Strict size parameters keep textarea locked on both PC and mobile displays */
-textarea {
+/* FIXED: Sizing parameter setup completely locks textarea container parameters on desktop and mobile viewport states */
+.custom-field-textarea {
     height: 140px !important;
     min-height: 140px !important;
     max-height: 140px !important;
-    resize: none !important;              /* Removes the window drag icon handle */
+    resize: none !important;              /* Strip and disable browser dimension alteration anchor nodes */
 }
 
-input:focus, 
-textarea:focus {
+.custom-field-input:focus, 
+.custom-field-textarea:focus {
     border-color: #ff4500 !important;
     background-color: #050505 !important;
 }
 
 /* ==========================================================================
-   6. INTERACTIVE ACTIONS / BUTTONS
+   6. INTERACTIVE INTERFACES & CTAs
    ========================================================================== */
 .btn-red {
     display: inline-block;
@@ -150,13 +172,32 @@ textarea:focus {
 }
 
 /* ==========================================================================
-   7. MEDIA SCREEN RESPONSIVENESS
+   7. LARGE SCREEN DESKTOP RESPONSIVE CONFIGURATIONS (Computer Display Mode)
    ========================================================================== */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+    /* Shifts navigation bar back to side-by-side row on computers */
+    .custom-nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-logo-group {
+        flex-direction: row;
+    }
+
+    .nav-links-list {
+        flex-direction: row; /* Flips link flow horizontally on computer views */
+        justify-content: flex-end;
+        gap: 24px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 }
