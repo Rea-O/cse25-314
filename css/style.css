@@ -29,50 +29,53 @@ body {
     color: #dc3545;
 }
 /* ==========================================================================
-   2.GLOBAL NAVIGATION HEADER (STUCK UP VERTICALLY ON BOTH PC & PHONE)
+   2.GLOBAL NAVIGATION HEADER (ALWAYS HORIZONTAL IN BOTH PORTRAIT & LANDSCAPE)
    ========================================================================== */
-/* Main wrapper: Always forces a vertical stack layout */
+
+/* Main Navbar Wrapper */
 .custom-navbar {
     display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;    /* Centers everything on phones */
+    flex-direction: column !important; /* Mobile Portrait: Brand Group stays on top, Links drop underneath */
+    align-items: center !important;
     gap: 15px !important;
     width: 100% !important;
     max-width: 1140px !important;
     margin: 0 auto !important;
 }
 
-/* Brand Group: Logo directly above text on all screen formats */
+/* Brand Identity Group (Logo + Text Title) */
 .nav-brand-group {
     display: flex !important;
-    flex-direction: column !important; 
+    flex-direction: row !important;    /* Always keeps logo and text side-by-side */
     align-items: center !important;
-    gap: 8px !important;
+    gap: 12px !important;
 }
 
 .brand-logo-img {
-    height: 48px !important;
+    height: 44px !important;
     width: auto !important;
 }
 
 .text-logo {
     font-family: 'Oswald', sans-serif !important;
-    font-size: 1.85rem !important;
+    font-size: 1.75rem !important;
     font-weight: 700 !important;
     color: #dc3545 !important;
     letter-spacing: 0.5px !important;
 }
 
-/* Links Container: Always breaks links into a downward vertical row block */
+/* Navigation Links Menu: FORCED HORIZONTAL IN ALL MODES */
 .nav-links-menu {
     display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;    /* Keeps links centered under brand elements */
+    flex-direction: row !important;    /* FORCE SIDE-BY-SIDE HORIZONTAL LAYOUT EVERYWHERE */
+    flex-wrap: wrap !important;        /* Allows links to safely wrap onto a clean second line if on a tiny screen */
+    justify-content: center !important;/* Keeps links perfectly centered underneath the logo in portrait mode */
+    align-items: center !important;
     list-style: none !important;
-    gap: 12px !important;
-    width: 100% !important;
+    gap: 16px !important;              /* Comfortable horizontal spacing between menu links */
     margin: 0 !important;
     padding: 0 !important;
+    width: auto !important;
 }
 
 .nav-link-item {
@@ -82,8 +85,8 @@ body {
     font-weight: 600 !important;
     letter-spacing: 0.5px !important;
     transition: color 0.2s ease !important;
-    padding: 4px 8px !important;
-    display: block !important;
+    padding: 6px 10px !important;
+    display: inline-block !important;  /* Essential for horizontal block calculations */
     text-align: center !important;
 }
 
@@ -91,37 +94,29 @@ body {
     color: #dc3545 !important;
 }
 
-/* Red underline style for active navigation pages */
+/* Active Page Red Underline Highlight Link */
 .active-link {
     color: #dc3545 !important;
     text-decoration: underline !important;
-    text-underline-offset: 5px !important;
+    text-underline-offset: 6px !important;
     text-decoration-thickness: 2px !important;
 }
 
 /* ==========================================================================
-   3.WIDESCREEN DESKTOP ADJUSTMENTS (ALIGNS THE STACKED NAV TO THE LEFT)
+   3.LANDSCAPE MODE ADJUSTMENTS (LAPTOPS, TABLETS, & LANDSCAPE SCREENS)
    ========================================================================== */
 @media screen and (min-width: 768px) {
-    /* Pulls the vertical stack over to the left side on laptops and PC screens */
+    /* Shifts layout to a single horizontal line across the screen on PC / Landscape */
     .custom-navbar {
-        align-items: flex-start !important; 
-        padding-left: 20px !important;
+        flex-direction: row !important;     /* Splits Brand Left and Links Right */
+        justify-content: space-between !important; 
+        align-items: center !important;
+        padding: 0 10px !important;
     }
 
-    .nav-brand-group {
-        align-items: flex-start !important;
-    }
-
-    /* Keeps the links running down vertically, but shifts them left under the brand title */
     .nav-links-menu {
-        align-items: flex-start !important; 
-        padding-left: 5px !important;       
-        width: auto !important;
-    }
-
-    .nav-link-item {
-        text-align: left !important;
+        justify-content: flex-end !important; /* Pushes the horizontal link row neatly to the right side */
+        gap: 24px !important;                 /* Gives them roomier spacing on big widescreen monitors */
     }
 }
 /* ==========================================================================
