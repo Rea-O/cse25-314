@@ -24,60 +24,86 @@ body {
     align-items: center;
     text-align: center;
 }
-
+/* Container holding the navigation */
 nav {
-  padding: 20px;
-  background: #000;
+  width: 100%;
+  background-color: #000;
+  padding: 15px 0;
   border-bottom: 1px solid #333;
 }
 
+/* The actual list (ul) holding your links */
 nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Aligns items to the right like your screenshot */
+  align-items: center;
   list-style: none;
-  flex-wrap: wrap; 
-  gap: 20px; 
+  margin: 0;
+  padding: 0 20px;
+  
+  /* THE FIXES FOR OVERLAPPING: */
+  flex-wrap: wrap; /* Allows links to safely drop to a new line if screen is tight */
+  gap: 25px;       /* Puts perfect, equal spacing between every single link */
 }
 
+/* Individual list items */
+nav ul li {
+  margin: 0; /* Clear out old margins that might be causing weird offsets */
+}
+
+/* The actual clickable text links */
 nav ul li a {
   text-decoration: none;
-  color: #ff6b6b; 
   font-weight: bold;
-  text-transform: uppercase;
   font-size: 14px;
+  text-transform: uppercase;
+  color: #ff6b6b; /* Adjust to your exact theme red/orange */
+  
+  /* Prevents words from breaking awkwardly into two lines */
+  white-space: nowrap; 
 }
 
+/* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center; /* Center the links on mobile */
+    gap: 15px;               /* Slightly tighter spacing for small screens */
+  }
+}
+
+/* Target both text input fields and textareas on all pages */
 input[type="text"], 
 input[type="email"], 
-input[type="tel"],
-textarea, 
-select {
-    width: 100%;
-    background-color: #1a1a1a ;
-    color: #ffffff ;
-    border: 1px solid #333;  
-    padding: 12px;
-    border-radius: 8px;
-    outline: none; 
-    font-family: inherit;
-    margin-bottom: 15px;
-    display: block;
-}
-
-input:focus, 
-textarea:focus {
-    border-color: #ff4500 ;
-    background-color: #121212 ;
-}
-
 textarea {
-    min-height: 120px;
-    resize: none; 
+  width: 100%;
+  background-color: #121212; /* Dark background to match your theme */
+  color: #ffffff;            /* Pure white text when typing */
+  border: 1px solid #333333; /* Subtle grey border instead of harsh white */
+  border-radius: 8px;        /* Smooth, rounded corners */
+  padding: 12px 16px;
+  font-size: 16px;           /* Prevents iOS/Safari from auto-zooming on mobile */
+  font-family: inherit;      /* Keeps your website's main font */
+  outline: none;             /* Removes the default blue browser outline */
+  box-sizing: border-box;    /* Keeps everything perfectly aligned */
+  
+  /* Fixes a Safari issue where mobile inputs sometimes show a default inner shadow */
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-input:-webkit-autofill {
-    -webkit-text-fill-color: #ffffff ;
-    -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset ;
+/* Change the border color to your theme red/orange when clicking inside the box */
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus {
+  border-color: #ff6b6b; 
+  background-color: #1a1a1a; /* Slightly lighter dark shade when active */
+}
+
+/* Style the placeholder text (the temporary hint text inside the box) */
+input::placeholder, 
+textarea::placeholder {
+  color: #777777; /* Dim grey so it looks like a hint and doesn't clash */
+  font-size: 14px;
 }
 
 .btn-red, .whatsapp-btn, button[type="submit"] {
@@ -95,15 +121,4 @@ input:-webkit-autofill {
 
 .btn-red:hover {
     background-color: #cc3700;
-}
-
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column; 
-    gap: 12px;
-  }
-  
-  .hero-title {
-      font-size: 2.5rem;
-  }
 }
