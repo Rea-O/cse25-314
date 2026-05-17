@@ -1,87 +1,103 @@
 /* ==========================================================================
-   1. GLOBAL REUSABLE FORMATS
+   1. GLOBAL SYSTEM SETTINGS & THEME FOUNDATION
    ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #18181b !important; /* Emulates dark zinc-900 look across all pages */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
 .font-oswald {
     font-family: 'Oswald', sans-serif;
 }
+
 .uppercase {
     text-transform: uppercase;
 }
-.border-b-2 {
-    border-bottom: 2px solid #dc3545;
+
+/* Red accent lines matching the branding rules */
+.header-border-b {
+    border-bottom: 2px solid #dc3545 !important;
 }
-.border-t {
-    border-top: 1px solid #212529;
+
+.border-t-dark {
+    border-top: 1px solid #27272a;
 }
-.text-red {
-    color: #dc3545;
-}
+
 .text-red-accent {
-    color: #ff4500;
-}
-.max-w-form {
-    max-width: 500px;
-}
-.brand-logo-img {
-    height: 40px;
-    width: auto;
-}
-.text-logo {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: #ff4500;
-    letter-spacing: 1px;
+    color: #dc3545;
 }
 
 /* ==========================================================================
-   2. MOBILE-FIRST NAVIGATION STACK (Matches your phone screens)
+   2. GLOBAL NAVIGATION HEADER (MOBILE VERTICAL STACK BY DEFAULT)
    ========================================================================== */
-.custom-nav {
+/* Mobile View First: Elements stack vertically in a clean line */
+.custom-navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    max-width: 1140px;
     width: 100%;
 }
 
-.nav-logo-group {
+.nav-brand-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Logo sits directly above text on small screens */
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
-.nav-links-list {
+.brand-logo-img {
+    height: 48px; /* Clean, recognizable sizing for your brand logo icon */
+    width: auto;
+}
+
+.text-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #dc3545;
+    letter-spacing: 0.5px;
+}
+
+.nav-links-menu {
     display: flex;
-    flex-direction: column; /* Forces vertical order stack layout default */
+    flex-direction: column; /* FORCES LINKS TO STACK VERTICALLY ON PHONES */
     align-items: center;
     list-style: none;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link-item {
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
     padding: 4px 8px;
-    display: inline-block;
+    display: block;
 }
+
 .nav-link-item:hover {
-    color: #ff4500;
+    color: #dc3545;
 }
+
+/* Highlighted active page underline design rule */
 .active-link {
-    color: #ff4500 !important;
+    color: #dc3545 !important;
     text-decoration: underline !important;
     text-underline-offset: 5px;
     text-decoration-thickness: 2px;
 }
 
 /* ==========================================================================
-   3. HERO BANNER STYLE (With 75% Dark Low-Lighting Filter Overlay)
+   3. HERO BANNER WITH DIMMED LOW-LIGHT IMAGING OVERLAY
    ========================================================================== */
 .hero-section {
     position: relative;
@@ -90,114 +106,72 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Mixes dark layer matrix over the top of the background image configuration asset */
+    /* Mixes a 75% pure dark filter directly over the top of your background food picture */
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
                 url('../background.jpg') center/cover no-repeat;
 }
+
+.overlay {
+    padding: 50px 20px;
+}
+
 .hero-title {
-    font-size: 4rem;
-    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.25rem;
+    font-weight: 700;
     color: #ffffff;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
+
 .hero-subtitle {
     font-size: 1.35rem;
-    color: #cccccc;
+    color: #e4e4e7;
     max-width: 650px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 35px auto;
 }
 
 /* ==========================================================================
-   4. CONTENT BLOCKS & PRICING
+   4. CONTENT LAYOUT BLOCKS & SUBSCRIPTION PRICING CARDS
    ========================================================================== */
 .card-custom {
-    background-color: #1a1a1a;
-    border: 1px solid #2d2d2d;
+    background-color: #27272a; /* Solid dark container card style background color */
+    border: 1px solid #3f3f46;
 }
+
 .border-red {
     border: 1px solid #dc3545 !important;
 }
 
 /* ==========================================================================
-   5. FIELDS & LOCKED TEXTAREAS (Theme matching black background, white text)
+   5. GLOBAL FORM SETTINGS (FIXED BLACK FIELDS FOR FAQ & SUBSCRIBE)
    ========================================================================== */
-.custom-field-input,
-.custom-field-textarea {
+/* Forcing inputs, selections and textareas to use a unified theme across the site */
+textarea,
+input[type="text"], 
+input[type="email"],
+select {
     width: 100% !important;
     max-width: 100% !important;
-    background-color: #000000 !important; /* Pure black fill layer background */
-    color: #ffffff !important;            /* High visibility pure white font character line color */
-    border: 1px solid #333333 !important;
-    border-radius: 6px !important;
+    background-color: #000000 !important; /* Pure black field inputs matching layouts */
+    color: #ffffff !important;            /* High visibility typing text color values */
+    border: 1px solid #3f3f46 !important;
+    border-radius: 8px !important;
     padding: 12px 16px !important;
     font-size: 16px !important;
     outline: none !important;
-    box-sizing: border-box !important;
+    box-sizing: border-box !important;   /* Safeguards fields against extending past screens */
 }
 
-/* FIXED: Sizing parameter setup completely locks textarea container parameters on desktop and mobile viewport states */
-.custom-field-textarea {
+/* FIXED TEXTAREAS: Locks box bounds completely on laptops and mobile devices */
+textarea {
     height: 140px !important;
     min-height: 140px !important;
     max-height: 140px !important;
-    resize: none !important;              /* Strip and disable browser dimension alteration anchor nodes */
+    resize: none !important;              /* Completely hides and disables drag handle window hooks */
 }
 
-.custom-field-input:focus, 
-.custom-field-textarea:focus {
-    border-color: #ff4500 !important;
-    background-color: #050505 !important;
-}
-
-/* ==========================================================================
-   6. INTERACTIVE INTERFACES & CTAs
-   ========================================================================== */
-.btn-red {
-    display: inline-block;
-    background-color: #dc3545;
-    color: #ffffff !important;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 12px 32px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    transition: background-color 0.2s ease;
-    border: none;
-    cursor: pointer;
-}
-.btn-red:hover {
-    background-color: #bb2d3b;
-}
-
-/* ==========================================================================
-   7. LARGE SCREEN DESKTOP RESPONSIVE CONFIGURATIONS (Computer Display Mode)
-   ========================================================================== */
-@media screen and (min-width: 768px) {
-    /* Shifts navigation bar back to side-by-side row on computers */
-    .custom-nav {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .nav-logo-group {
-        flex-direction: row;
-    }
-
-    .nav-links-list {
-        flex-direction: row; /* Flips link flow horizontally on computer views */
-        justify-content: flex-end;
-        gap: 24px;
-        width: auto;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .hero-subtitle {
-        font-size: 1.05rem;
-    }
-}
+textarea:focus,
+input:focus,
+select:focus {
+    border-color: #dc3545 !important;    /* Sleek red boundary highlight on focus
