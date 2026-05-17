@@ -28,8 +28,9 @@ body {
 .text-red-accent {
     color: #dc3545;
 }
+
 /* ==========================================================================
-   2.GLOBAL NAVIGATION HEADER (MOBILE-FIRST VERTICAL LAYOUT)
+   2. GLOBAL NAVIGATION HEADER (MOBILE-FIRST VERTICAL LAYOUT)
    ========================================================================== */
 /* The main navbar structural wrapper */
 .custom-navbar {
@@ -130,6 +131,7 @@ body {
         text-align: left !important;
     }
 }
+
 /* ==========================================================================
    4. HERO BANNER WITH DIMMED LOW-LIGHT IMAGING OVERLAY
    ========================================================================== */
@@ -176,6 +178,7 @@ body {
 .border-red {
     border: 1px solid #dc3545 !important;
 }
+
 /* ==========================================================================
    6. GLOBAL FORM SETTINGS (HIGH-VISIBILITY BLACK FIELDS FOR FAQ & SUBSCRIBE)
    ========================================================================== */
@@ -243,4 +246,3 @@ select option {
 input[type="radio"] {
     accent-color: #dc3545 !important;
 }
-    border-color: #dc3545 !important;    /* Sleek red boundary highlight on focus
