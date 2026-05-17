@@ -34,7 +34,7 @@ body {
    ========================================================================== */
 /* Mobile View First: Elements stack vertically in a clean line */
 .custom-navbar {
-    display: row;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
