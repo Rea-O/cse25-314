@@ -29,24 +29,24 @@ body {
     color: #dc3545;
 }
 /* ==========================================================================
-   2. GLOBAL NAVIGATION HEADER (STAYS VERTICAL ON ALL SCREENS)
+   2.GLOBAL NAVIGATION HEADER (STAYS VERTICAL ON ALL SCREENS)
    ========================================================================== */
-/* The main navbar wrapper */
+/* The main navbar structural wrapper */
 .custom-navbar {
-    display: flex;
-    flex-direction: column; /* FORCES VERTICAL STACKING EVERYWHERE */
-    align-items: center;    /* Centered layout by default for mobile screens */
+    display: flex !important;
+    flex-direction: column !important; /* FORCES VERTICAL LAYOUT BY DEFAULT */
+    align-items: center !important;    /* Centers everything on mobile screens */
     gap: 20px;
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
 }
 
-/* Brand Identity Group (Logo badge elements) */
+/* Brand Identity Group (Logo + Text name) */
 .nav-brand-group {
-    display: flex;
-    flex-direction: column; /* Logo sits directly above text on small screens */
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important; /* Logo sits right above text on mobile devices */
+    align-items: center !important;
     gap: 8px;
 }
 
@@ -63,12 +63,12 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* The Navigation Links Container */
+/* The Navigation Links List Container */
 .nav-links-menu {
-    display: flex;
-    flex-direction: column; /* FORCES LINKS VERTICAL ON ALL DEVICES */
-    align-items: center;    /* Centered underneath logo on phones */
-    list-style: none;
+    display: flex !important;
+    flex-direction: column !important; /* FORCES VERTICAL LINK STACK EVERYWHERE */
+    align-items: center !important;    /* Centers link texts beneath the logo on phones */
+    list-style: none !important;
     gap: 12px;
     width: 100%;
     margin: 0;
@@ -76,8 +76,8 @@ body {
 }
 
 .nav-link-item {
-    color: #ffffff;
-    text-decoration: none;
+    color: #ffffff !important;
+    text-decoration: none !important;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -88,10 +88,10 @@ body {
 }
 
 .nav-link-item:hover {
-    color: #dc3545;
+    color: #dc3545 !important;
 }
 
-/* Highlighted active page underline design rule */
+/* Highlighted active page tracking lines */
 .active-link {
     color: #dc3545 !important;
     text-decoration: underline !important;
@@ -99,27 +99,27 @@ body {
     text-decoration-thickness: 2px;
 }
 
-
 /* ==========================================================================
-   3. WIDESCREEN COMPUTER MEDIA QUERIES (DESKTOP MODE POSITIONING)
+   3.WIDESCREEN COMPUTER MEDIA QUERIES (DESKTOP SIDELINE LAYOUT)
    ========================================================================== */
 @media screen and (min-width: 768px) {
-    /* Shifts the entire header content structure sideways on PCs */
+    /* Pulls the full vertical navigation group to the left side on laptops */
     .custom-navbar {
-        align-items: flex-start !important; /* Pulls the entire group to the left side */
+        align-items: flex-start !important; /* Left-aligns navbar elements */
         padding-left: 20px;
     }
 
+    /* Arranges logo picture side-by-side with brand name text on desktop only */
     .nav-brand-group {
-        flex-direction: row; /* Returns logo side-by-side with brand name on PC only */
-        align-items: center;
+        flex-direction: row !important;
+        align-items: center !important;
     }
 
-    /* Keeps links stacked running down vertically, but shifts them left aligned under the brand */
+    /* Left-aligns vertical text block rows under the main brand label */
     .nav-links-menu {
-        align-items: flex-start !important; /* Left aligns link text lines instead of centering */
-        padding-left: 56px;                  /* Indents links slightly so they line up neatly with text */
-        width: auto;
+        align-items: flex-start !important; 
+        padding-left: 56px !important;       /* Clean alignment shift under the text label */
+        width: auto !important;
     }
 
     .nav-link-item {
