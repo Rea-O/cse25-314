@@ -28,110 +28,102 @@ body {
 .text-red-accent {
     color: #dc3545;
 }
-
 /* ==========================================================================
-   2. GLOBAL NAVIGATION HEADER (MOBILE-FIRST VERTICAL LAYOUT)
+   2.GLOBAL NAVIGATION HEADER (STUCK UP VERTICALLY ON BOTH PC & PHONE)
    ========================================================================== */
-/* The main navbar structural wrapper */
+/* Main wrapper: Always forces a vertical stack layout */
 .custom-navbar {
     display: flex !important;
-    flex-direction: column !important; /* Stack logo above links on mobile */
-    align-items: center !important;    /* Center everything for mobile devices */
-    gap: 20px;
-    width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
+    flex-direction: column !important; 
+    align-items: center !important;    /* Centers everything on phones */
+    gap: 15px !important;
+    width: 100% !important;
+    max-width: 1140px !important;
+    margin: 0 auto !important;
 }
 
-/* Brand Identity Group (Logo + Text name) */
+/* Brand Group: Logo directly above text on all screen formats */
 .nav-brand-group {
     display: flex !important;
-    flex-direction: column !important; /* Logo sits right above text on mobile devices */
+    flex-direction: column !important; 
     align-items: center !important;
-    gap: 8px;
+    gap: 8px !important;
 }
 
 .brand-logo-img {
-    height: 48px;
-    width: auto;
+    height: 48px !important;
+    width: auto !important;
 }
 
 .text-logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.85rem;
-    font-weight: 700;
-    color: #dc3545;
-    letter-spacing: 0.5px;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 1.85rem !important;
+    font-weight: 700 !important;
+    color: #dc3545 !important;
+    letter-spacing: 0.5px !important;
 }
 
-/* The Navigation Links List Container */
+/* Links Container: Always breaks links into a downward vertical row block */
 .nav-links-menu {
     display: flex !important;
-    flex-direction: column !important; /* Keep vertical link stack on mobile phones */
-    align-items: center !important;    
+    flex-direction: column !important; 
+    align-items: center !important;    /* Keeps links centered under brand elements */
     list-style: none !important;
-    gap: 12px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .nav-link-item {
     color: #ffffff !important;
     text-decoration: none !important;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: color 0.2s ease;
-    padding: 4px 8px;
-    display: block;
-    text-align: center;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    transition: color 0.2s ease !important;
+    padding: 4px 8px !important;
+    display: block !important;
+    text-align: center !important;
 }
 
 .nav-link-item:hover {
     color: #dc3545 !important;
 }
 
-/* Highlighted active page tracking lines */
+/* Red underline style for active navigation pages */
 .active-link {
     color: #dc3545 !important;
     text-decoration: underline !important;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
+    text-underline-offset: 5px !important;
+    text-decoration-thickness: 2px !important;
 }
 
 /* ==========================================================================
-   3. WIDESCREEN COMPUTER MEDIA QUERIES (DESKTOP HORIZONTAL ROW LAYOUT)
+   3.WIDESCREEN DESKTOP ADJUSTMENTS (ALIGNS THE STACKED NAV TO THE LEFT)
    ========================================================================== */
 @media screen and (min-width: 768px) {
-    /* Changes navbar layout to a row and pushes links to the far right */
+    /* Pulls the vertical stack over to the left side on laptops and PC screens */
     .custom-navbar {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 0 20px;
+        align-items: flex-start !important; 
+        padding-left: 20px !important;
     }
 
-    /* Arranges logo picture side-by-side with brand name text */
     .nav-brand-group {
-        flex-direction: row !important;
-        align-items: center !important;
+        align-items: flex-start !important;
     }
 
-    /* Unstacks the navigation links list container into a row */
+    /* Keeps the links running down vertically, but shifts them left under the brand title */
     .nav-links-menu {
-        flex-direction: row !important;
-        align-items: center !important; 
-        gap: 24px; /* Clean spacing between links */
+        align-items: flex-start !important; 
+        padding-left: 5px !important;       
         width: auto !important;
-        padding-left: 0 !important;
     }
 
     .nav-link-item {
         text-align: left !important;
     }
 }
-
 /* ==========================================================================
    4. HERO BANNER WITH DIMMED LOW-LIGHT IMAGING OVERLAY
    ========================================================================== */
