@@ -1,276 +1,162 @@
 /* ==========================================================================
-   1. GLOBAL RESET & BASE STYLES
+   1. CORE CUSTOM STYLES & LAYOUTS
    ========================================================================== */
-* {
-  box-sizing: border-box; 
-  margin: 0;
-  padding: 0;
+.font-oswald {
+    font-family: 'Oswald', sans-serif;
 }
-
-body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
+.uppercase {
+    text-transform: uppercase;
 }
-
+.border-b-2 {
+    border-bottom: 2px solid #dc3545;
+}
+.border-t {
+    border-top: 1px solid #212529;
+}
 .text-red {
-  color: #ff4500; /* Theme dark orange / primary red */
+    color: #dc3545;
+}
+.text-red-accent {
+    color: #ff4500;
+}
+.max-w-6xl {
+    max-width: 1140px;
+}
+.max-w-form {
+    max-width: 500px;
+}
+.brand-logo-img {
+    height: 40px;
+    width: auto;
+}
+.text-logo {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #dc3545;
+    letter-spacing: 1px;
 }
 
 /* ==========================================================================
-   2. NAVIGATION BAR (Clean spacing, zero overlap)
+   2. VERTICAL NAVIGATION LINKS
    ========================================================================== */
-nav {
-  width: 100%;
-  background-color: #000000;
-  padding: 20px 0;
-  border-bottom: 1px solid #222;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.nav-link-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+    padding: 4px 8px;
+    display: inline-block;
 }
-
-nav .nav-container {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
+.nav-link-item:hover {
+    color: #ff4500;
 }
-
-.brand-logo {
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  flex-wrap: wrap; /* Keeps items from stepping on each other */
-  gap: 25px;       /* Spacing controller between nav items */
-}
-
-nav ul li a {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #ff6b6b; 
-  white-space: nowrap; /* Ensures text stays in one continuous line block */
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: #ffffff; 
+.active-link {
+    color: #ff4500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 /* ==========================================================================
-   3. HERO SECTION (Low lighting background image mix)
+   3. HERO BANNER WITH TINTED PHOTO TONE
    ========================================================================== */
 .hero-section {
-  position: relative;
-  height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  
-  /* Applies a dark layer overlay to dim your uploaded background.jpg */
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-              url('background.jpg') center/cover no-repeat;
+    position: relative;
+    width: 100%;
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Layers a low-lighting tint overlay across your background food picture asset */
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                url('../background.jpg') center/cover no-repeat;
 }
-
-.hero-content {
-  max-width: 750px;
-  padding: 20px;
+.hero-title {
+    font-size: 3.75rem;
+    font-weight: 900;
+    color: #ff4500;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
-
-.hero-section h1 {
-  font-size: 56px;
-  font-weight: 900;
-  margin-bottom: 15px;
-}
-
-.hero-section p {
-  font-size: 20px;
-  color: #e0e0e0;
-  margin-bottom: 30px;
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #ffffff;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
 }
 
 /* ==========================================================================
-   4. PRICING LAYOUT GRID
+   4. SECTIONS & PRICING CARDS
    ========================================================================== */
-.pricing-section {
-  background-color: #0a0a0a;
-  padding: 60px 20px;
+.card-custom {
+    background-color: #212529; /* Matches body dark layout block background tint */
+    border: 1px solid #2c3034;
 }
-
-.pricing-section h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.price-card {
-  background-color: #ff4500;
-  padding: 35px 20px;
-  border-radius: 8px;
-  color: #ffffff;
-}
-
-.price-card.featured {
-  transform: scale(1.03);
-}
-
-.price-card h3 {
-  font-size: 42px;
-  font-weight: 900;
-  margin-bottom: 5px;
+.border-red {
+    border: 1px solid #dc3545 !important;
 }
 
 /* ==========================================================================
-   5. INPUT FIELDS & TEXTAREAS (Theme matching black box, white text)
+   5. GLOBAL FORM SETTINGS (LOCKED SIZES FOR PC AND SMARTPHONES)
    ========================================================================== */
-.form-container {
-  max-width: 500px;
-  margin: 60px auto;
-  padding: 30px;
-  background-color: #0c0c0c;
-  border: 1px solid #1a1a1a;
-  border-radius: 12px;
-  text-align: left;
-}
-
-.form-container h2 {
-  text-align: center;
-  font-size: 24px;
-}
-
-label {
-  display: block;
-  margin: 15px 0 5px 0;
-  font-weight: bold;
-  color: #ff6b6b;
-  font-size: 14px;
-}
-
 input[type="text"], 
 input[type="email"], 
 textarea {
-  width: 100%;
-  background-color: #000000; /* FIXED: True black box background */
-  color: #ffffff;            /* FIXED: Pure white typing text color */
-  border: 1px solid #333333; /* Soft border blend */
-  border-radius: 6px;        
-  padding: 12px 16px;
-  font-size: 16px;           
-  font-family: inherit;      
-  outline: none;             
-  box-sizing: border-box;    
-  -webkit-appearance: none;
-  appearance: none;
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #000000 !important; /* True black entry background */
+    color: #ffffff !important;            /* Pure white typing text values */
+    border: 1px solid #343a40 !important;
+    border-radius: 6px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    outline: none !important;
+    box-sizing: border-box !important;    /* Forces inputs to share uniform boundaries */
 }
 
+/* FIXED: Strict size parameters keep textarea locked on both PC and mobile displays */
 textarea {
-  min-height: 130px;
-  resize: none; /* FIXED: Locked size prevents user-breaking layout alterations */
+    height: 140px !important;
+    min-height: 140px !important;
+    max-height: 140px !important;
+    resize: none !important;              /* Removes the window drag icon handle */
 }
 
 input:focus, 
 textarea:focus {
-  border-color: #ff4500; 
-  background-color: #050505;
-}
-
-input::placeholder, 
-textarea::placeholder {
-  color: #555555; 
+    border-color: #ff4500 !important;
+    background-color: #050505 !important;
 }
 
 /* ==========================================================================
-   6. BUTTONS & INTERACTION Elements
+   6. INTERACTIVE ACTIONS / BUTTONS
    ========================================================================== */
 .btn-red {
-  display: inline-block;
-  background-color: #ff4500;
-  color: #ffffff;
-  padding: 12px 30px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  width: 100%; /* Spans full form row space */
-  text-align: center;
-  transition: opacity 0.2s ease;
+    display: inline-block;
+    background-color: #dc3545;
+    color: #ffffff !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
 }
-
-header .btn-red {
-  width: auto; /* Keeps hero button text-sized instead of full screen layout wide */
-}
-
 .btn-red:hover {
-  opacity: 0.9;
+    background-color: #bb2d3b;
 }
 
 /* ==========================================================================
-   7. FOOTER STYLES
-   ========================================================================== */
-footer {
-  background-color: #000000;
-  padding: 40px 20px;
-  font-size: 13px;
-  color: #666666;
-  border-top: 1px solid #111;
-}
-
-/* ==========================================================================
-   8. RESPONSIVE DEVICE QUERIES (iPhone / Samsung Viewports)
+   7. MEDIA SCREEN RESPONSIVENESS
    ========================================================================== */
 @media screen and (max-width: 768px) {
-  nav .nav-container {
-    flex-direction: column; 
-    gap: 15px;
-    padding: 0 15px;
-  }
-
-  nav ul {
-    justify-content: center; 
-    gap: 15px;               
-    width: 100%;
-  }
-  
-  nav ul li a {
-    font-size: 13px; 
-  }
-
-  .hero-section h1 {
-    font-size: 38px;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr; /* Stacks column grids safely vertically on mobile screen devices */
-    gap: 25px;
-  }
-  
-  .price-card.featured {
-    transform: none;
-  }
-
-  .form-container {
-    width: 90%;
-  }
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
 }
