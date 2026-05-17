@@ -4,70 +4,68 @@
   padding: 0;
 }
 
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background.jpg');
-    background-size: cover;      
-    background-position: center;  
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    min-height: 100vh;  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-/* Container holding the navigation */
 nav {
   width: 100%;
   background-color: #000;
-  padding: 15px 0;
-  border-bottom: 1px solid #333;
+  padding: 20px 0;
+  border-bottom: 1px solid #222;
 }
 
-/* The actual list (ul) holding your links */
+nav .nav-container {
+  display: flex;
+  justify-content: space-between; /* Keeps logo/brand on left, menu links on right */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
 nav ul {
   display: flex;
-  justify-content: flex-end; /* Aligns items to the right like your screenshot */
   align-items: center;
   list-style: none;
   margin: 0;
-  padding: 0 20px;
+  padding: 0;
   
-  /* THE FIXES FOR OVERLAPPING: */
-  flex-wrap: wrap; /* Allows links to safely drop to a new line if screen is tight */
-  gap: 25px;       /* Puts perfect, equal spacing between every single link */
+  /* THE FIXES FOR OVERLAPPING WORDS: */
+  flex-wrap: wrap; /* Allows text to wrap safely on tighter desktop/laptop screens */
+  gap: 25px;       /* Injects perfect, equal spacing between every link item */
 }
 
-/* Individual list items */
 nav ul li {
-  margin: 0; /* Clear out old margins that might be causing weird offsets */
+  margin: 0; /* Clears out old, messy margins that cause layout breakages */
 }
 
-/* The actual clickable text links */
 nav ul li a {
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
-  color: #ff6b6b; /* Adjust to your exact theme red/orange */
-  
-  /* Prevents words from breaking awkwardly into two lines */
-  white-space: nowrap; 
+  color: #ff6b6b; /* Your theme red/orange color */
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Forces words like "SUBSCRIBE" to stay on one line */
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* Active page link highlight or hover effect */
+nav ul li a:hover {
+  color: #ffffff; 
+}
+
 @media screen and (max-width: 768px) {
+  nav .nav-container {
+    flex-direction: column; /* Stacks the brand logo and links vertically */
+    gap: 15px;
+    padding: 0 15px;
+  }
+
   nav ul {
-    justify-content: center; /* Center the links on mobile */
-    gap: 15px;               /* Slightly tighter spacing for small screens */
+    justify-content: center; /* Centers the menu links perfectly on mobile displays */
+    gap: 15px;               /* Slightly tighter gap so it comfortably fits mobile screens */
+    width: 100%;
+  }
+  
+  nav ul li a {
+    font-size: 13px; /* Slightly smaller text for cleaner mobile proportions */
   }
 }
 
