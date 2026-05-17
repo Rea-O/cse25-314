@@ -172,7 +172,7 @@ body {
     border: 1px solid #3f3f46;
     
     /* FIXES UNIFORM SIZE FOR ALL CARDS */
-    height: 420px !important;       /* Forces every card to the exact same height */
+    height: 320px !important;       /* Forces every card to the exact same height */
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important; /* Keeps spacing neat from top to bottom */
