@@ -144,7 +144,7 @@ body {
     align-items: center;
     /* Mixes a 75% pure dark filter directly over the top of your background food picture */
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-                url('../background.jpg') center/cover no-repeat;
+                url('background.jpg') center/cover no-repeat;
 }
 
 .overlay {
