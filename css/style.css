@@ -29,13 +29,13 @@ body {
     color: #dc3545;
 }
 /* ==========================================================================
-   2.GLOBAL NAVIGATION HEADER (STAYS VERTICAL ON ALL SCREENS)
+   2.GLOBAL NAVIGATION HEADER (MOBILE-FIRST VERTICAL LAYOUT)
    ========================================================================== */
 /* The main navbar structural wrapper */
 .custom-navbar {
     display: flex !important;
-    flex-direction: column !important; /* FORCES VERTICAL LAYOUT BY DEFAULT */
-    align-items: center !important;    /* Centers everything on mobile screens */
+    flex-direction: column !important; /* Stack logo above links on mobile */
+    align-items: center !important;    /* Center everything for mobile devices */
     gap: 20px;
     width: 100%;
     max-width: 1140px;
@@ -66,8 +66,8 @@ body {
 /* The Navigation Links List Container */
 .nav-links-menu {
     display: flex !important;
-    flex-direction: column !important; /* FORCES VERTICAL LINK STACK EVERYWHERE */
-    align-items: center !important;    /* Centers link texts beneath the logo on phones */
+    flex-direction: column !important; /* Keep vertical link stack on mobile phones */
+    align-items: center !important;    
     list-style: none !important;
     gap: 12px;
     width: 100%;
@@ -100,26 +100,30 @@ body {
 }
 
 /* ==========================================================================
-   3.WIDESCREEN COMPUTER MEDIA QUERIES (DESKTOP SIDELINE LAYOUT)
+   3. WIDESCREEN COMPUTER MEDIA QUERIES (DESKTOP HORIZONTAL ROW LAYOUT)
    ========================================================================== */
 @media screen and (min-width: 768px) {
-    /* Pulls the full vertical navigation group to the left side on laptops */
+    /* Changes navbar layout to a row and pushes links to the far right */
     .custom-navbar {
-        align-items: flex-start !important; /* Left-aligns navbar elements */
-        padding-left: 20px;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 20px;
     }
 
-    /* Arranges logo picture side-by-side with brand name text on desktop only */
+    /* Arranges logo picture side-by-side with brand name text */
     .nav-brand-group {
         flex-direction: row !important;
         align-items: center !important;
     }
 
-    /* Left-aligns vertical text block rows under the main brand label */
+    /* Unstacks the navigation links list container into a row */
     .nav-links-menu {
-        align-items: flex-start !important; 
-        padding-left: 56px !important;       /* Clean alignment shift under the text label */
+        flex-direction: row !important;
+        align-items: center !important; 
+        gap: 24px; /* Clean spacing between links */
         width: auto !important;
+        padding-left: 0 !important;
     }
 
     .nav-link-item {
