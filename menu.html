@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,191 +6,91 @@
     <title>Menu - Skeif Botsogo</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght=700&family=Segoe+UI:wght=400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body class="bg-zinc-900 text-white font-sans">
+<body class="bg-zinc-dark text-white">
 
     <header class="bg-black py-4 px-4 px-md-5 header-border-b">
         <nav class="custom-navbar mx-auto">
-
+            
             <div class="nav-brand-group">
                 <img src="logo.jpeg" alt="Logo" class="brand-logo-img rounded">
-
-                <div class="text-logo uppercase font-oswald">
-                    SKEIF BOTSOGO
-                </div>
+                <div class="text-logo uppercase">SKEIF BOTSOGO</div>
             </div>
-
+            
             <ul class="nav-links-menu uppercase m-0 p-0">
-                <li>
-                    <a href="index.html" class="nav-link-item">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="menu.html" class="nav-link-item active-link">
-                        Menu
-                    </a>
-                </li>
-
-                <li>
-                    <a href="subscribe.html" class="nav-link-item">
-                        Subscribe
-                    </a>
-                </li>
-
-                <li>
-                    <a href="faq.html" class="nav-link-item">
-                        FAQ
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html" class="nav-link-item">
-                        Contact
-                    </a>
-                </li>
+                <li><a href="index.html" class="nav-link-item">Home</a></li>
+                <li><a href="menu.html" class="nav-link-item active-link">Menu</a></li>
+                <li><a href="subscribe.html" class="nav-link-item">Subscribe</a></li>
+                <li><a href="faq.html" class="nav-link-item">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link-item">Contact</a></li>
             </ul>
-
+            
         </nav>
     </header>
 
     <main class="container py-5">
-
-        <h2 class="text-center display-4 font-bold py-5 text-red-600 uppercase font-oswald">
-            Weekly Meals
-        </h2>
-
+        <h2 class="text-center display-4 font-bold py-5 text-red-accent uppercase text-center-heading">Weekly Meals</h2>
+   
         <div class="row g-4">
-
+ 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="bg-zinc-800 p-3 rounded-xl border border-zinc-700 h-100 transition hover:border-red-600">
-
-                    <img src="monday.jpg"
-                         alt="Monday"
-                         class="w-full h-64 object-cover rounded-lg mb-3">
-
-                    <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2">
-                        Monday
-                    </h3>
-
-                    <p class="mt-2">
-                        Pap, Seswaa and Morogo
-                    </p>
-
+                <div class="card-custom p-3 rounded h-100 transition">
+                    <img src="monday.jpg" alt="Monday" class="w-100 h-64 object-cover rounded mb-3">
+                    <h3 class="text-red-accent font-oswald text-xl uppercase border-b border-secondary pb-2">Monday</h3>
+                    <p class="mt-2 mb-0">Pap, Seswaa and Morogo</p>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="bg-zinc-800 p-3 rounded-xl border border-zinc-700 h-100 transition hover:border-red-600">
-
-                    <img src="tuesday.jpg"
-                         alt="Tuesday"
-                         class="w-full h-64 object-cover rounded-lg mb-3">
-
-                    <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2">
-                        Tuesday
-                    </h3>
-
-                    <p class="mt-2">
-                        Rice, Chakalaka, Coleslaw and Chicken
-                    </p>
-
+                <div class="card-custom p-3 rounded h-100 transition">
+                    <img src="tuesday.jpg" alt="Tuesday" class="w-100 h-64 object-cover rounded mb-3">
+                    <h3 class="text-red-accent font-oswald text-xl uppercase border-b border-secondary pb-2">Tuesday</h3>
+                    <p class="mt-2 mb-0">Rice, Chakalaka, Coleslaw and Chicken</p>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="bg-zinc-800 p-3 rounded-xl border-2 border-dashed border-red-900/50 h-100 flex flex-col justify-center items-center text-center">
-
-                    <i class="fa-solid fa-utensils text-4xl text-red-600 mb-3"></i>
-
-                    <h3 class="text-red-500 font-oswald text-xl uppercase">
-                        Wednesday
-                    </h3>
-
-                    <p class="italic text-zinc-400">
-                        Customer's Choice Day
-                    </p>
-
+                <div class="card-custom p-3 rounded h-100 d-flex flex-column justify-content-center align-items-center text-center border-red">
+                    <i class="fa-solid fa-utensils display-5 text-red-accent mb-3"></i>
+                    <h3 class="text-red-accent font-oswald text-xl uppercase mb-2">Wednesday</h3>
+                    <p class="fst-italic text-secondary mb-0">Customer's Choice Day</p>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="bg-zinc-800 p-3 rounded-xl border border-zinc-700 h-100 transition hover:border-red-600">
-
-                    <img src="thursday.jpg"
-                         alt="Thursday"
-                         class="w-full h-64 object-cover rounded-lg mb-3">
-
-                    <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2">
-                        Thursday
-                    </h3>
-
-                    <p class="mt-2">
-                        Madombi and Beef Stew
-                    </p>
-
+                <div class="card-custom p-3 rounded h-100 transition">
+                    <img src="thursday.jpg" alt="Thursday" class="w-100 h-64 object-cover rounded mb-3">
+                    <h3 class="text-red-accent font-oswald text-xl uppercase border-b border-secondary pb-2">Thursday</h3>
+                    <p class="mt-2 mb-0">Madombi and Beef Stew</p>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="bg-zinc-800 p-3 rounded-xl border border-zinc-700 h-100 transition hover:border-red-600">
-
-                    <img src="friday.jpg"
-                         alt="Friday"
-                         class="w-full h-64 object-cover rounded-lg mb-3">
-
-                    <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2">
-                        Friday
-                    </h3>
-
-                    <p class="mt-2">
-                        Penne Pasta, Chicken and Chicken Salad
-                    </p>
-
+                <div class="card-custom p-3 rounded h-100 transition">
+                    <img src="friday.jpg" alt="Friday" class="w-100 h-64 object-cover rounded mb-3">
+                    <h3 class="text-red-accent font-oswald text-xl uppercase border-b border-secondary pb-2">Friday</h3>
+                    <p class="mt-2 mb-0">Penne pasta, Chicken and Chicken salad</p>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="bg-zinc-800 p-3 rounded-xl border border-zinc-700 h-100 transition hover:border-red-600">
-
-                    <img src="saturday.jpg"
-                         alt="Saturday"
-                         class="w-full h-64 object-cover rounded-lg mb-3">
-
-                    <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2">
-                        Saturday
-                    </h3>
-
-                    <p class="mt-2">
-                        Samp, Beetroot, Coleslaw and Beef Stew
-                    </p>
-
+                <div class="card-custom p-3 rounded h-100 transition">
+                    <img src="saturday.jpg" alt="Saturday" class="w-100 h-64 object-cover rounded mb-3">
+                    <h3 class="text-red-accent font-oswald text-xl uppercase border-b border-secondary pb-2">Saturday</h3>
+                    <p class="mt-2 mb-0">Samp, Beetroot, Coleslaw and Beef stew</p>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 mx-auto">
-                <div class="bg-zinc-800 p-3 rounded-xl border border-zinc-700 h-100 transition hover:border-red-600">
-
-                    <img src="sunday.jpg"
-                         alt="Sunday"
-                         class="w-full h-64 object-cover rounded-lg mb-3">
-
-                    <h3 class="text-red-500 font-oswald text-xl uppercase border-b border-red-900/30 pb-2">
-                        Sunday
-                    </h3>
-
-                    <p class="mt-2">
-                        Madombi, Chakalaka, Coleslaw and Chicken
-                    </p>
-
+                <div class="card-custom p-3 rounded h-100 transition">
+                    <img src="sunday.jpg" alt="Sunday" class="w-100 h-64 object-cover rounded mb-3">
+                    <h3 class="text-red-accent font-oswald text-xl uppercase border-b border-secondary pb-2">Sunday</h3>
+                    <p class="mt-2 mb-0">Madombi, Chakalaka, Coleslaw and Chicken</p>
                 </div>
             </div>
 
@@ -198,39 +98,20 @@
 
         <div class="row mt-5 pt-4 pb-5">
             <div class="col-12 text-center">
-
-                <p class="text-zinc-400 mb-4 font-semibold italic">
-                    Ready to fuel your studies?
-                </p>
-
-                <a href="subscribe.html"
-                   class="btn btn-danger btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg border-2 border-white/10 hover:scale-105 transition-transform uppercase font-oswald">
-
-                    <i class="fa-solid fa-calendar-check me-2"></i>
-                    Subscribe Now
-
+                <p class="text-secondary mb-4 fw-semibold fst-italic">Ready to fuel your studies?</p>
+                <a href="subscribe.html" class="btn btn-danger btn-lg px-5 py-3 fw-bold rounded shadow-lg transition-transform hover:scale-105 text-uppercase text-center-heading">
+                    <i class="fa-solid fa-calendar-check me-2"></i> Subscribe Now
                 </a>
-
             </div>
         </div>
 
     </main>
 
-    <footer class="bg-black py-10 text-center text-zinc-500 mt-10">
-
-        <p class="mb-2 uppercase tracking-widest font-bold text-zinc-400">
-            © 2026 SKEIF BOTSOGO | Feeding Minds
-        </p>
-
-        <p>
-            Gaborone, Botswana
-        </p>
-
+    <footer class="bg-black py-4 text-center text-secondary border-t-dark">
+        <p class="small mb-0 px-3">© 2026 SKEIF BOTSOGO | FEEDING MINDS | GABORONE, BOTSWANA</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="js/main.js"></script>
-
 </body>
 </html>
