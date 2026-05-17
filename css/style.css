@@ -1,9 +1,22 @@
+/* ==========================================================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
 * {
   box-sizing: border-box; 
   margin: 0;
   padding: 0;
 }
 
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* ==========================================================================
+   2. NAVIGATION BAR
+   ========================================================================== */
 nav {
   width: 100%;
   background-color: #000;
@@ -13,7 +26,7 @@ nav {
 
 nav .nav-container {
   display: flex;
-  justify-content: space-between; /* Keeps logo/brand on left, menu links on right */
+  justify-content: space-between; 
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -24,16 +37,8 @@ nav ul {
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  
-  /* THE FIXES FOR OVERLAPPING WORDS: */
-  flex-wrap: wrap; /* Allows text to wrap safely on tighter desktop/laptop screens */
-  gap: 25px;       /* Injects perfect, equal spacing between every link item */
-}
-
-nav ul li {
-  margin: 0; /* Clears out old, messy margins that cause layout breakages */
+  flex-wrap: wrap; 
+  gap: 25px;       
 }
 
 nav ul li a {
@@ -41,82 +46,95 @@ nav ul li a {
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
-  color: #ff6b6b; /* Your theme red/orange color */
+  color: #ff6b6b; 
+  white-space: nowrap; 
   transition: color 0.3s ease;
-  white-space: nowrap; /* Forces words like "SUBSCRIBE" to stay on one line */
 }
 
-/* Active page link highlight or hover effect */
 nav ul li a:hover {
   color: #ffffff; 
 }
 
+/* ==========================================================================
+   3. FORMS & INPUTS (FAQ / SUBSCRIBE)
+   ========================================================================== */
+input[type="text"], 
+input[type="email"], 
+textarea {
+  width: 100%;
+  background-color: #121212; 
+  color: #ffffff;            
+  border: 1px solid #333333; 
+  border-radius: 8px;        
+  padding: 12px 16px;
+  font-size: 16px;           
+  font-family: inherit;      
+  outline: none;             
+  box-sizing: border-box;    
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: none; /* Prevents users from breaking layout sizing */
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus {
+  border-color: #ff6b6b; 
+  background-color: #1a1a1a; 
+}
+
+input::placeholder, 
+textarea::placeholder {
+  color: #777777; 
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+.btn-red, 
+.whatsapp-btn, 
+button[type="submit"] {
+  display: inline-block;
+  background-color: #ff4500;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-red:hover,
+.whatsapp-btn:hover,
+button[type="submit"]:hover {
+  background-color: #cc3700;
+}
+
+/* ==========================================================================
+   5. MOBILE RESPONSIVENESS (iPhone / Samsung / Safari)
+   ========================================================================== */
 @media screen and (max-width: 768px) {
   nav .nav-container {
-    flex-direction: column; /* Stacks the brand logo and links vertically */
+    flex-direction: column; 
     gap: 15px;
     padding: 0 15px;
   }
 
   nav ul {
-    justify-content: center; /* Centers the menu links perfectly on mobile displays */
-    gap: 15px;               /* Slightly tighter gap so it comfortably fits mobile screens */
+    justify-content: center; 
+    gap: 15px;               
     width: 100%;
   }
   
   nav ul li a {
-    font-size: 13px; /* Slightly smaller text for cleaner mobile proportions */
+    font-size: 13px; 
   }
-}
-
-/* Target both text input fields and textareas on all pages */
-input[type="text"], 
-input[type="email"], 
-textarea {
-  width: 100%;
-  background-color: #121212; /* Dark background to match your theme */
-  color: #ffffff;            /* Pure white text when typing */
-  border: 1px solid #333333; /* Subtle grey border instead of harsh white */
-  border-radius: 8px;        /* Smooth, rounded corners */
-  padding: 12px 16px;
-  font-size: 16px;           /* Prevents iOS/Safari from auto-zooming on mobile */
-  font-family: inherit;      /* Keeps your website's main font */
-  outline: none;             /* Removes the default blue browser outline */
-  box-sizing: border-box;    /* Keeps everything perfectly aligned */
-  
-  /* Fixes a Safari issue where mobile inputs sometimes show a default inner shadow */
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-/* Change the border color to your theme red/orange when clicking inside the box */
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-textarea:focus {
-  border-color: #ff6b6b; 
-  background-color: #1a1a1a; /* Slightly lighter dark shade when active */
-}
-
-/* Style the placeholder text (the temporary hint text inside the box) */
-input::placeholder, 
-textarea::placeholder {
-  color: #777777; /* Dim grey so it looks like a hint and doesn't clash */
-  font-size: 14px;
-}
-
-.btn-red, .whatsapp-btn, button[type="submit"] {
-    background-color: #ff4500;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-red:hover {
-    background-color: #cc3700;
 }
