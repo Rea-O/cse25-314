@@ -58,41 +58,40 @@ nav ul li a:hover {
 /* ==========================================================================
    3. FORMS & INPUTS (FAQ / SUBSCRIBE)
    ========================================================================== */
+/* Target both text input fields and textareas on all pages */
 input[type="text"], 
 input[type="email"], 
 textarea {
   width: 100%;
-  background-color: #121212; 
-  color: #ffffff;            
-  border: 1px solid #333333; 
-  border-radius: 8px;        
+  background-color: #121212; /* Dark background to match your theme */
+  color: #ffffff;            /* Pure white text when typing */
+  border: 1px solid #333333; /* Subtle grey border instead of harsh white */
+  border-radius: 8px;        /* Smooth, rounded corners */
   padding: 12px 16px;
-  font-size: 16px;           
-  font-family: inherit;      
-  outline: none;             
-  box-sizing: border-box;    
+  font-size: 16px;           /* Prevents iOS/Safari from auto-zooming on mobile */
+  font-family: inherit;      /* Keeps your website's main font */
+  outline: none;             /* Removes the default blue browser outline */
+  box-sizing: border-box;    /* Keeps everything perfectly aligned */
+  
+  /* Fixes a Safari issue where mobile inputs sometimes show a default inner shadow */
   -webkit-appearance: none;
   appearance: none;
 }
 
-textarea {
-  min-height: 120px;
-  resize: none; /* Prevents users from breaking layout sizing */
-}
-
+/* Change the border color to your theme red/orange when clicking inside the box */
 input[type="text"]:focus, 
 input[type="email"]:focus, 
 textarea:focus {
   border-color: #ff6b6b; 
-  background-color: #1a1a1a; 
+  background-color: #1a1a1a; /* Slightly lighter dark shade when active */
 }
 
+/* Style the placeholder text (the temporary hint text inside the box) */
 input::placeholder, 
 textarea::placeholder {
-  color: #777777; 
+  color: #777777; /* Dim grey so it looks like a hint and doesn't clash */
   font-size: 14px;
 }
-
 /* ==========================================================================
    4. BUTTONS
    ========================================================================== */
