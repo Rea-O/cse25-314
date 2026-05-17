@@ -8,20 +8,27 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
+.text-red {
+  color: #ff4500; /* Theme dark orange / primary red */
+}
+
 /* ==========================================================================
-   2. NAVIGATION BAR
+   2. NAVIGATION BAR (Clean spacing, zero overlap)
    ========================================================================== */
 nav {
   width: 100%;
-  background-color: #000;
+  background-color: #000000;
   padding: 20px 0;
   border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav .nav-container {
@@ -33,12 +40,18 @@ nav .nav-container {
   padding: 0 30px;
 }
 
+.brand-logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 nav ul {
   display: flex;
   align-items: center;
   list-style: none;
-  flex-wrap: wrap; 
-  gap: 25px;       
+  flex-wrap: wrap; /* Keeps items from stepping on each other */
+  gap: 25px;       /* Spacing controller between nav items */
 }
 
 nav ul li a {
@@ -47,60 +60,152 @@ nav ul li a {
   font-size: 14px;
   text-transform: uppercase;
   color: #ff6b6b; 
-  white-space: nowrap; 
+  white-space: nowrap; /* Ensures text stays in one continuous line block */
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: #ffffff; 
 }
 
 /* ==========================================================================
-   3. FORMS & INPUTS (FAQ / SUBSCRIBE)
+   3. HERO SECTION (Low lighting background image mix)
    ========================================================================== */
-/* Target both text input fields and textareas on all pages */
+.hero-section {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  
+  /* Applies a dark layer overlay to dim your uploaded background.jpg */
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+              url('background.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 750px;
+  padding: 20px;
+}
+
+.hero-section h1 {
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.hero-section p {
+  font-size: 20px;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   4. PRICING LAYOUT GRID
+   ========================================================================== */
+.pricing-section {
+  background-color: #0a0a0a;
+  padding: 60px 20px;
+}
+
+.pricing-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.price-card {
+  background-color: #ff4500;
+  padding: 35px 20px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.price-card.featured {
+  transform: scale(1.03);
+}
+
+.price-card h3 {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   5. INPUT FIELDS & TEXTAREAS (Theme matching black box, white text)
+   ========================================================================== */
+.form-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #0c0c0c;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.form-container h2 {
+  text-align: center;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px 0;
+  font-weight: bold;
+  color: #ff6b6b;
+  font-size: 14px;
+}
+
 input[type="text"], 
 input[type="email"], 
 textarea {
   width: 100%;
-  background-color: #121212; /* Dark background to match your theme */
-  color: #ffffff;            /* Pure white text when typing */
-  border: 1px solid #333333; /* Subtle grey border instead of harsh white */
-  border-radius: 8px;        /* Smooth, rounded corners */
+  background-color: #000000; /* FIXED: True black box background */
+  color: #ffffff;            /* FIXED: Pure white typing text color */
+  border: 1px solid #333333; /* Soft border blend */
+  border-radius: 6px;        
   padding: 12px 16px;
-  font-size: 16px;           /* Prevents iOS/Safari from auto-zooming on mobile */
-  font-family: inherit;      /* Keeps your website's main font */
-  outline: none;             /* Removes the default blue browser outline */
-  box-sizing: border-box;    /* Keeps everything perfectly aligned */
-  
-  /* Fixes a Safari issue where mobile inputs sometimes show a default inner shadow */
+  font-size: 16px;           
+  font-family: inherit;      
+  outline: none;             
+  box-sizing: border-box;    
   -webkit-appearance: none;
   appearance: none;
 }
 
-/* Change the border color to your theme red/orange when clicking inside the box */
-input[type="text"]:focus, 
-input[type="email"]:focus, 
-textarea:focus {
-  border-color: #ff6b6b; 
-  background-color: #1a1a1a; /* Slightly lighter dark shade when active */
+textarea {
+  min-height: 130px;
+  resize: none; /* FIXED: Locked size prevents user-breaking layout alterations */
 }
 
-/* Style the placeholder text (the temporary hint text inside the box) */
+input:focus, 
+textarea:focus {
+  border-color: #ff4500; 
+  background-color: #050505;
+}
+
 input::placeholder, 
 textarea::placeholder {
-  color: #777777; /* Dim grey so it looks like a hint and doesn't clash */
-  font-size: 14px;
+  color: #555555; 
 }
+
 /* ==========================================================================
-   4. BUTTONS
+   6. BUTTONS & INTERACTION Elements
    ========================================================================== */
-.btn-red, 
-.whatsapp-btn, 
-button[type="submit"] {
+.btn-red {
   display: inline-block;
   background-color: #ff4500;
-  color: #fff;
+  color: #ffffff;
   padding: 12px 30px;
   text-decoration: none;
   font-weight: bold;
@@ -108,17 +213,32 @@ button[type="submit"] {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+  width: 100%; /* Spans full form row space */
+  text-align: center;
+  transition: opacity 0.2s ease;
 }
 
-.btn-red:hover,
-.whatsapp-btn:hover,
-button[type="submit"]:hover {
-  background-color: #cc3700;
+header .btn-red {
+  width: auto; /* Keeps hero button text-sized instead of full screen layout wide */
+}
+
+.btn-red:hover {
+  opacity: 0.9;
 }
 
 /* ==========================================================================
-   5. MOBILE RESPONSIVENESS (iPhone / Samsung / Safari)
+   7. FOOTER STYLES
+   ========================================================================== */
+footer {
+  background-color: #000000;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: #666666;
+  border-top: 1px solid #111;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DEVICE QUERIES (iPhone / Samsung Viewports)
    ========================================================================== */
 @media screen and (max-width: 768px) {
   nav .nav-container {
@@ -135,5 +255,22 @@ button[type="submit"]:hover {
   
   nav ul li a {
     font-size: 13px; 
+  }
+
+  .hero-section h1 {
+    font-size: 38px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr; /* Stacks column grids safely vertically on mobile screen devices */
+    gap: 25px;
+  }
+  
+  .price-card.featured {
+    transform: none;
+  }
+
+  .form-container {
+    width: 90%;
   }
 }
