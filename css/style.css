@@ -165,17 +165,26 @@ body {
 }
 
 /* ==========================================================================
-   5. CONTENT LAYOUT BLOCKS & SUBSCRIPTION PRICING CARDS
+   5. CONTENT LAYOUT BLOCKS & DAILY MEAL CARDS 
    ========================================================================== */
 .card-custom {
-    background-color: #27272a; /* Solid dark container card style background color */
+    background-color: #27272a; /* Solid dark container card background */
     border: 1px solid #3f3f46;
+    
+    /* FIXES UNIFORM SIZE FOR ALL CARDS */
+    height: 420px !important;       /* Forces every card to the exact same height */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; /* Keeps spacing neat from top to bottom */
+    overflow: hidden;               /* Prevents any weird text spillover */
 }
 
-.border-red {
-    border: 1px solid #dc3545 !important;
+/* Ensures all meal images inside the cards maintain the exact same dimensions */
+.card-custom img {
+    height: 220px !important;
+    width: 100% !important;
+    object-cover: cover !important; /* Prevents stretching or squeezing the food photos */
 }
-
 /* ==========================================================================
    6. GLOBAL FORM SETTINGS (HIGH-VISIBILITY BLACK FIELDS FOR FAQ & SUBSCRIBE)
    ========================================================================== */
