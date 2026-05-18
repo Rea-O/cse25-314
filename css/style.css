@@ -178,7 +178,35 @@ body, .bg-zinc-dark {
     width: 100% !important;
     object-fit: cover !important; 
 }
+/* local context override for extra tall meal presentation layouts */
+        .menu-card-custom {
+            background-color: #27272a !important; 
+            border: 1px solid #3f3f46 !important;
+            /* Height scaled to 520px to comfortably hold the larger 335px imagery */
+            height: 520px !important;       
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important; 
+            overflow: hidden !important;               
+            transition: border-color 0.2s ease, transform 0.2s ease !important;
+        }
+        
+        .menu-card-custom:hover {
+            border-color: #dc3545 !important;
+            transform: translateY(-4px);
+        }
 
+        /* Food photos scaled up by exactly 3cm (115px added onto original 220px baseline) */
+        .menu-card-custom img {
+            height: 335px !important;
+            width: 100% !important;
+            object-fit: cover !important; 
+        }
+
+        /* Keeps the dashed Wednesday card matching the exact height scale */
+        .menu-card-dashed {
+            border: 2px dashed rgba(220, 53, 69, 0.4) !important;
+        }
 @media screen and (min-width: 768px) {
     .plan-scale-highlight {
         transform: scale(1.03) !important;
