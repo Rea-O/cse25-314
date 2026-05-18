@@ -28,7 +28,19 @@ body, .bg-zinc-dark {
     text-transform: uppercase !important;
 }
 
-/* Red accent rules matching branding identity guidelines */
+/* Playful, energetic eye-guiding color accents for dark mode */
+.text-danger-bright {
+    color: #ff3344 !important; /* Bold energetic red for key headers & metrics */
+}
+
+.text-emerald-bright {
+    color: #10b981 !important; /* Vibrant positive emerald green for checkmarks */
+}
+
+.text-amber-bright {
+    color: #fbbf24 !important; /* Warm gold/amber for special interactive feature highlights */
+}
+
 .header-border-b {
     border-bottom: 2px solid #dc3545 !important;
 }
@@ -46,7 +58,7 @@ body, .bg-zinc-dark {
 }
 
 /* ==========================================================================
-   2. GLOBAL NAVIGATION HEADER (HORIZONTAL ROW ALIGNMENT ON BOTH SYSTEMS)
+   2. GLOBAL NAVIGATION HEADER (HORIZONTAL ROW ALIGNMENT ON ALL DEVICES)
    ========================================================================== */
 .custom-navbar {
     display: flex !important;
@@ -178,134 +190,49 @@ body, .bg-zinc-dark {
     width: 100% !important;
     object-fit: cover !important; 
 }
-/* local context override for extra tall meal presentation layouts */
-        .menu-card-custom {
-            background-color: #27272a !important; 
-            border: 1px solid #3f3f46 !important;
-            /* Height scaled to 520px to comfortably hold the larger 335px imagery */
-            height: 520px !important;       
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: flex-start !important; 
-            overflow: hidden !important;               
-            transition: border-color 0.2s ease, transform 0.2s ease !important;
-        }
-        
-        .menu-card-custom:hover {
-            border-color: #dc3545 !important;
-            transform: translateY(-4px);
-        }
 
-        /* Food photos scaled up by exactly 3cm (115px added onto original 220px baseline) */
-        .menu-card-custom img {
-            height: 335px !important;
-            width: 100% !important;
-            object-fit: cover !important; 
-        }
+/* Playful, high-vibrancy badge background overlay rule */
+.badge-popular {
+    background: linear-gradient(135deg, #dc3545, #ff3344) !important;
+    color: #ffffff !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.4) !important;
+}
 
-        /* Keeps the dashed Wednesday card matching the exact height scale */
-        .menu-card-dashed {
-            border: 2px dashed rgba(220, 53, 69, 0.4) !important;
-        }
 @media screen and (min-width: 768px) {
     .plan-scale-highlight {
         transform: scale(1.03) !important;
+        border-color: #ff3344 !important;
+        box-shadow: 0 0 25px rgba(255, 51, 68, 0.25) !important;
         z-index: 2;
     }
 }
 
 /* ==========================================================================
-   5. FORM INPUT OVERRIDES (DARK INTERFACES FOR FORMS & TEXTAREAS)
+   5. MENU GALLERY INTERACTION LAYOUT CODES (SCALED PIC BASES BY +3CM)
    ========================================================================== */
-textarea,
-input[type="text"], 
-input[type="email"],
-select {
+.menu-card-custom {
+    background-color: #27272a !important; 
+    border: 1px solid #3f3f46 !important;
+    height: 520px !important; /* Scaled precisely to fit the expanded image height beautifully */      
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important; 
+    overflow: hidden !important;               
+    transition: border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.menu-card-custom:hover {
+    border-color: #ff3344 !important;
+    transform: translateY(-4px);
+}
+
+.menu-card-custom img {
+    height: 335px !important; /* Your signature food images enlarged by 3cm */
     width: 100% !important;
-    max-width: 100% !important;
-    background-color: #000000 !important; 
-    color: #ffffff !important;            
-    border: 1px solid #3f3f46 !important; 
-    border-radius: 8px !important;
-    padding: 12px 16px !important;
-    font-size: 16px !important;
-    outline: none !important;
-    box-sizing: border-box !important;   
+    object-fit: cover !important; 
 }
 
-textarea {
-    height: 140px !important;
-    min-height: 140px !important;
-    max-height: 140px !important;
-    resize: none !important;              
-}
-
-textarea:focus,
-input:focus,
-select:focus {
-    border-color: #dc3545 !important;    
-    box-shadow: 0 0 8px rgba(220, 53, 69, 0.35) !important;
-    background-color: #000000 !important;
-    color: #ffffff !important;
-}
-
-textarea::placeholder,
-input::placeholder {
-    color: #a1a1aa !important;   
-    opacity: 1 !important;        
-}
-
-select option {
-    background-color: #18181b !important;
-    color: #ffffff !important;
-}
-
-/* ==========================================================================
-   6. BOOTSTRAP FLUSH ACCORDION CLEAN CONFIGURATION RULES
-   ========================================================================== */
-.accordion-item {
-    background-color: #27272a !important; 
-    border: 1px solid #3f3f46 !important;  
-    margin-bottom: 1rem !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-}
-
-.accordion-button.faq-question-btn {
-    background-color: #27272a !important; 
-    color: #ffffff !important;             
-    font-family: 'Oswald', sans-serif !important;
-    font-size: 1.2rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    padding: 1.25rem 1.5rem !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.accordion-button.faq-question-btn:not(.collapsed) {
-    background-color: #1f1f23 !important;  
-    color: #dc3545 !important;              
-    box-shadow: none !important;            
-}
-
-.accordion-button.faq-question-btn::after {
-    filter: invert(1) grayscale(1) brightness(2) !important;
-}
-
-.faq-answer-text {
-    color: #e4e4e7 !important;              
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-    background-color: #27272a !important;   
-    border-top: 1px solid #3f3f46 !important; 
-    padding: 1.25rem 1.5rem !important;
-}
-
-/* Interactive Component Scale Transitions */
-.btn-action-hover {
-    transition: transform 0.2s ease, background-color 0.2s ease !important;
-}
-.btn-action-hover:hover {
-    transform: scale(1.02) !important;
-}
+.menu-card-dashed {
+    border: 2px dashed rgba(251, 191, 36
