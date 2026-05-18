@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #18181b !important; /* Matches dark zinc look */
+    background-color: #18181b !important; /* Emulates dark zinc-900 look across all pages */
     color: #ffffff !important;
     overflow-x: hidden;
 }
@@ -20,7 +20,7 @@ body {
     text-transform: uppercase !important;
 }
 
-/* Red accent lines matching branding identity */
+/* Red accent rules matching branding identity guidelines */
 .header-border-b {
     border-bottom: 2px solid #dc3545 !important;
 }
@@ -33,17 +33,14 @@ body {
     color: #dc3545 !important;
 }
 
-/* Base text color helper to completely replace zinc-400 utilities */
-.text-zinc-400 {
-    color: #a1a1aa !important;
-}
-
 /* ==========================================================================
-   2. GLOBAL NAVIGATION HEADER (ALWAYS HORIZONTAL)
+   2. GLOBAL NAVIGATION HEADER (ALWAYS HORIZONTAL IN BOTH PORTRAIT & LANDSCAPE)
    ========================================================================== */
+
+/* Main Navbar Wrapper */
 .custom-navbar {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: column !important; /* Mobile Portrait: Brand Group stays on top, Links drop underneath */
     align-items: center !important;
     gap: 15px !important;
     width: 100% !important;
@@ -51,9 +48,10 @@ body {
     margin: 0 auto !important;
 }
 
+/* Brand Identity Group (Logo + Text Title) */
 .nav-brand-group {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: row !important;    /* Always keeps logo and text side-by-side */
     align-items: center !important;
     gap: 12px !important;
 }
@@ -71,14 +69,15 @@ body {
     letter-spacing: 0.5px !important;
 }
 
+/* Navigation Links Menu: FORCED HORIZONTAL IN ALL MODES */
 .nav-links-menu {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    flex-direction: row !important;    /* FORCE SIDE-BY-SIDE HORIZONTAL LAYOUT EVERYWHERE */
+    flex-wrap: wrap !important;        /* Allows links to safely wrap onto a clean second line if on a tiny screen */
+    justify-content: center !important;/* Keeps links perfectly centered underneath the logo in portrait mode */
     align-items: center !important;
     list-style: none !important;
-    gap: 16px !important;
+    gap: 16px !important;              /* Comfortable horizontal spacing between menu links */
     margin: 0 !important;
     padding: 0 !important;
     width: auto !important;
@@ -92,7 +91,7 @@ body {
     letter-spacing: 0.5px !important;
     transition: color 0.2s ease !important;
     padding: 6px 10px !important;
-    display: inline-block !important;
+    display: inline-block !important;  /* Essential for horizontal block calculations */
     text-align: center !important;
 }
 
@@ -100,6 +99,7 @@ body {
     color: #dc3545 !important;
 }
 
+/* Active Page Red Underline Highlight Link */
 .active-link {
     color: #dc3545 !important;
     text-decoration: underline !important;
@@ -107,59 +107,109 @@ body {
     text-decoration-thickness: 2px !important;
 }
 
+/* ==========================================================================
+   3. LANDSCAPE MODE ADJUSTMENTS (LAPTOPS, TABLETS, & LANDSCAPE SCREENS)
+   ========================================================================== */
 @media screen and (min-width: 768px) {
+    /* Shifts layout to a single horizontal line across the screen on PC / Landscape */
     .custom-navbar {
-        flex-direction: row !important;
-        justify-content: space-between !important;
+        flex-direction: row !important;     /* Splits Brand Left and Links Right */
+        justify-content: space-between !important; 
+        align-items: center !important;
         padding: 0 10px !important;
     }
+
     .nav-links-menu {
-        justify-content: flex-end !important;
-        gap: 24px !important;
+        justify-content: flex-end !important; /* Pushes the horizontal link row neatly to the right side */
+        gap: 24px !important;                 /* Gives them roomier spacing on big widescreen monitors */
     }
 }
 
 /* ==========================================================================
-   3. CONTENT LAYOUT BLOCKS & DAILY MEAL CARDS 
+   4. HERO BANNER WITH DIMMED LOW-LIGHT IMAGING OVERLAY
    ========================================================================== */
-.card-custom {
-    background-color: #27272a !important;
-    border: 1px solid #3f3f46 !important;
-    height: 420px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    overflow: hidden !important;
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.overlay {
+    padding: 50px 20px;
+}
+
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    color: #e4e4e7;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+}
+
+/* ==========================================================================
+   5. CONTENT LAYOUT BLOCKS & DAILY MEAL CARDS 
+   ========================================================================== */
+.card-custom {
+    background-color: #27272a !important; /* Solid dark container card background */
+    border: 1px solid #3f3f46 !important;
+    
+    /* FIXES UNIFORM SIZE FOR ALL CARDS */
+    height: 420px !important;       /* Forces every card to the exact same height */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; /* Keeps spacing neat from top to bottom */
+    overflow: hidden !important;               /* Prevents any weird text spillover */
+}
+
+/* Ensures all meal images inside the cards maintain the exact same dimensions */
 .card-custom img {
     height: 220px !important;
     width: 100% !important;
-    object-fit: cover !important;
+    object-fit: cover !important; /* Prevents stretching or squeezing the food photos */
 }
 
 /* ==========================================================================
-   4. GLOBAL FORM INPUT FIELD OVERRIDES
+   6. GLOBAL FORM SETTINGS (HIGH-VISIBILITY BLACK FIELDS FOR FAQ & SUBSCRIBE)
    ========================================================================== */
 textarea,
 input[type="text"], 
 input[type="email"],
 select {
     width: 100% !important;
-    background-color: #000000 !important; 
+    max-width: 100% !important;
+    background-color: #000000 !important; /* Pure black field background */
+    
+    /* CRITICAL VISIBILITY FIX: Bright white text for maximum readability when typing */
     color: #ffffff !important;            
-    border: 1px solid #3f3f46 !important; 
+    
+    border: 1px solid #3f3f46 !important; /* Muted zinc border matching your theme panels */
     border-radius: 8px !important;
     padding: 12px 16px !important;
     font-size: 16px !important;
     outline: none !important;
+    box-sizing: border-box !important;   
 }
 
+/* FIXED TEXTAREAS: Locks box dimensions for both desktop and mobile screens */
 textarea {
     height: 140px !important;
+    min-height: 140px !important;
+    max-height: 140px !important;
     resize: none !important;              
 }
 
+/* Enhances field borders to your bright signature red when clicked/active */
 textarea:focus,
 input:focus,
 select:focus {
@@ -167,73 +217,32 @@ select:focus {
     box-shadow: 0 0 8px rgba(220, 53, 69, 0.35) !important;
 }
 
+/* CRITICAL PLACEHOLDER VISIBILITY FIX: Forces browser engines to display clear, legible hints */
 textarea::placeholder,
 input::placeholder {
-    color: #a1a1aa !important;   
-    opacity: 1 !important;        
+    color: #a1a1aa !important;   /* Crisp, light gray placeholder text (Zinc-400 color level) */
+    opacity: 1 !important;        /* Prevents browsers from making it too transparent to read */
 }
 
+/* Internet Explorer specific placeholder rules */
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+    color: #a1a1aa !important;
+}
+
+/* Microsoft Edge specific placeholder rules */
+textarea::-ms-input-placeholder,
+input::-ms-input-placeholder {
+    color: #a1a1aa !important;
+}
+
+/* Custom internal style mechanics to fix select dropdown option visibility */
 select option {
     background-color: #18181b !important;
     color: #ffffff !important;
 }
 
-/* ==========================================================================
-   5. HEAVY-DUTY BOOTSTRAP ACCORDION RE-ENGINEERING (NO MORE WHITE SLABS)
-   ========================================================================== */
-/* Fixes the flash-disappear bug */
-.accordion-collapse.collapse.show {
-    display: block !important;
-    visibility: visible !important;
-}
-
-/* Strips out the default container styles */
-.accordion-item {
-    background-color: #27272a !important; /* Dark Zinc background wrapper */
-    border: 1px solid #3f3f46 !important;  /* Defined borders */
-    margin-bottom: 1rem !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
-}
-
-/* Direct attack on the active/inactive state of buttons */
-.accordion-button.faq-question-btn {
-    background-color: #27272a !important; /* Force keep it dark when closed */
-    color: #ff6b00 !important;             /* Sharp Orange text color */
-    font-family: 'Oswald', sans-serif !important;
-    font-size: 1.25rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    padding: 1.25rem 1.5rem !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Forces button properties when expanded */
-.accordion-button.faq-question-btn:not(.collapsed) {
-    background-color: #1f1f23 !important;  /* Keeps it dark when expanded */
-    color: #ff8533 !important;              /* Keeps it orange when expanded */
-    box-shadow: none !important;            /* Removes blue light tint completely */
-}
-
-/* Re-colors the default icon arrow to bright white */
-.accordion-button.faq-question-btn::after {
-    filter: invert(1) grayscale(1) brightness(2) !important;
-}
-
-/* Cleans up response box styling */
-.faq-answer-text {
-    color: #e4e4e7 !important;              /* Clean white text */
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    background-color: #27272a !important;   /* Seamless container integration */
-    border-top: 1px solid #3f3f46 !important; /* Clean break under question button */
-    padding: 1.25rem 1.5rem !important;
-}
-
-.btn-action-hover {
-    transition: transform 0.2s ease, background-color 0.2s ease !important;
-}
-.btn-action-hover:hover {
-    transform: scale(1.01) !important;
+/* Custom internal style mechanics to fix default white radio item bubbles */
+input[type="radio"] {
+    accent-color: #dc3545 !important;
 }
