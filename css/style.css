@@ -7,8 +7,8 @@
 
 body, .bg-zinc-dark {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #18181b !important; /* Fixed dark zinc-900 background */
-    color: #ffffff !important;
+    background-color: #18181b; 
+    color: #ffffff ;
     overflow-x: hidden;
 }
 
@@ -28,17 +28,16 @@ body, .bg-zinc-dark {
     text-transform: uppercase !important;
 }
 
-/* Energetic eye-guiding color accents for dark mode */
 .text-danger-bright {
-    color: #ff3344 !important; /* Bold energetic red for key headers */
+    color: #ff3344 !important; 
 }
 
 .text-emerald-bright {
-    color: #10b981 !important; /* Vibrant emerald green for checkmarks & WhatsApp */
+    color: #10b981 !important; 
 }
 
 .text-amber-bright {
-    color: #fbbf24 !important; /* Warm gold/amber for special interactive feature highlights */
+    color: #fbbf24 !important; 
 }
 
 .header-border-b {
@@ -214,7 +213,7 @@ body, .bg-zinc-dark {
 .menu-card-custom {
     background-color: #27272a !important; 
     border: 1px solid #3f3f46 !important;
-    height: 520px !important; /* Scaled to fit the expanded image height */      
+    height: 520px !important;    
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important; 
@@ -234,7 +233,7 @@ body, .bg-zinc-dark {
 }
 
 .menu-card-dashed {
-    border: 2px dashed rgba(251, 191, 36, 0.4) !important; /* Styled with amber theme accents */
+    border: 2px dashed rgba(251, 191, 36, 0.4) !important; 
 }
 
 /* ==========================================================================
@@ -274,7 +273,6 @@ select:focus {
     color: #ffffff !important;
 }
 
-/* Fixes browser autofill forcing uninvited white backgrounds */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
@@ -315,7 +313,6 @@ input[type="radio"] {
     overflow: hidden !important;
 }
 
-/* Base style for collapsed state */
 .accordion-button.faq-question-btn {
     background-color: #27272a !important; 
     color: #ffffff !important;             
@@ -328,20 +325,17 @@ input[type="radio"] {
     box-shadow: none !important;
 }
 
-/* CRITICAL FIX: Overrides Bootstrap's bright blue/white expanded background */
 .accordion-button.faq-question-btn:not(.collapsed) {
     background-color: #1f1f23 !important;  
     color: #ff3344 !important;              
     box-shadow: none !important;            
 }
 
-/* Strips default focus shadow ring */
 .accordion-button:focus {
     box-shadow: none !important;
     border-color: rgba(255, 51, 68, 0.25) !important;
 }
 
-/* Forces right-side chevron icon to stay white */
 .accordion-button::after {
     filter: invert(1) grayscale(1) brightness(2) !important;
 }
