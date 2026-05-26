@@ -208,7 +208,7 @@ body, .bg-zinc-dark {
 }
 
 /* ==========================================================================
-   5. MENU GALLERY INTERACTION LAYOUT CODES (+3CM PIC SCALING)
+   5. MENU GALLERY INTERACTION LAYOUT CODES
    ========================================================================== */
 .menu-card-custom {
     background-color: #27272a !important; 
@@ -227,7 +227,7 @@ body, .bg-zinc-dark {
 }
 
 .menu-card-custom img {
-    height: 335px !important; /* Enlarged food images */
+    height: 335px !important; 
     width: 100% !important;
     object-fit: cover !important; 
 }
@@ -263,7 +263,6 @@ textarea {
     resize: none !important;              
 }
 
-/* Fixes the bright white flash and default blue glow on click */
 textarea:focus,
 input:focus,
 select:focus {
